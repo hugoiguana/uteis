@@ -1,0 +1,46 @@
+
+# Comandos:
+
+[ls -a] (Lista arquivos e pastas ocultas)
+[ls -l]
+[ls -la]
+[pwd]   (mostra o path do diretoriorio atual)
+[cd ~]  (Diretório do usuário)
+[cd]    (Diretório do usuário)
+[cd /]  (Diretório raiz)
+[cd /home] (Diretório com todos os usuários)
+[man mv] (Exibe opções para o comando)
+
+# Manipulando Arquivos:
+[touch teste.txt] (Cria um arquivo vazio)
+[echo "Hugo iguana" > teste.txt] (Cria um arquivo e escre um texto)
+[echo "Aline Lucia" >> teste.txt] (Adiciona outro texto ao arquivo)
+[cat teste.txt] (ler arquivo)
+[cat *.txt]      (Ler todos os arquivos txt)
+[cat teste?.txt] (Ler arquivos que possuem um carctere qualquer no lugar de ?)
+[cp arquivo1.txt arquivo2.txt] (copia conteúdo do arquivo1 para o arquivo2 sobrescrevendo todo o conteúdo.)
+[mv arquivo.txt pasta1]        (move arquivo)
+[mv arquivo.txt arquivo3.txt]  (Renomeia o arquivo)
+[rm pasta/teste.txt] (Deleta arquivo)
+[rm pasta/tes*] (Deleta todos os arquivos que començam com 'te')
+[rm pasta/teste?] (Deleta todos os arquivos que tem um caractere qualquer no ?)
+
+
+# Manipulando pastas:
+[mkdir pasta]   (Cria pasra)
+[rmdir pasta]   (Deleta pastas vazias)
+[rm -r teste/]  (Deleta pasta mesmo que tenha conteúdo)
+[ls pasta]
+
+
+
+#Descompactando arquivo tar.gz e instalando:
+tar -jxvf [nome do arquivo]
+
+
+# Gerenciando processos:
+top
+ps
+pstree
+kill  [PID]
+kill -9 [PID]
