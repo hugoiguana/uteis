@@ -27,10 +27,11 @@
 
 
 # Manipulando pastas:
+[ls pasta]
 [mkdir pasta]   (Cria pasra)
 [rmdir pasta]   (Deleta pastas vazias)
 [rm -r teste/]  (Deleta pasta mesmo que tenha conteúdo)
-[ls pasta]
+[cp -r pasta1 pasta2] (Copia uma pasta para outra pasta)
 
 
 
