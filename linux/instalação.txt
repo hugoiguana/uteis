@@ -18,6 +18,8 @@ sudo add-apt-repository ppa:rvm/smplayer
 sudo apt-get update
 sudo apt-get install smplayer smtube smplayer-themes
 
+# Brasero - Gravador de CD:
+sudo apt-get install brasero
 
 
 
@@ -69,3 +71,6 @@ npm --version
 sudo apt update
 sudo apt install maven
 mvn -version
+
+#GParted
+sudo apt-get install gparted
