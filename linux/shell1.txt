@@ -27,11 +27,22 @@
 
 
 # Manipulando pastas:
+[nautilus .]  Abre a pasta do caminho atual.
+[nautilus pasta] Abre a pasta selecionada.
 [ls pasta]
 [mkdir pasta]   (Cria pasra)
 [rmdir pasta]   (Deleta pastas vazias)
 [rm -r teste/]  (Deleta pasta mesmo que tenha conteúdo)
 [cp -r pasta1 pasta2] (Copia uma pasta para outra pasta)
+
+
+# Compactação ZIP:
+[zip -r zipado.zip assistidos/] (Zipa)
+[unzip -l zipado.zip] (Olha conteúdo)
+[unzip zipado.zip] (Unzipa)
+
+[zip -rq zipado.zip assistidos/] (Zipa sem cuspir informação)
+[unzip -q zipado.zip] (Unzipa sem cuspir informação) 
 
 
 
