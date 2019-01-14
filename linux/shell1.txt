@@ -1,4 +1,3 @@
-
 # Comandos:
 
 [ls -a] (Lista arquivos e pastas ocultas)
@@ -13,6 +12,7 @@
 
 # Manipulando Arquivos:
 [touch teste.txt] (Cria um arquivo vazio)
+[touch teste.txt] (Caso o arquivo exista, altera a data de criação indicando que houve alguma alteração.)
 [echo "Hugo iguana" > teste.txt] (Cria um arquivo e escre um texto)
 [echo "Aline Lucia" >> teste.txt] (Adiciona outro texto ao arquivo)
 [cat teste.txt] (ler arquivo)
@@ -24,6 +24,35 @@
 [rm pasta/teste.txt] (Deleta arquivo)
 [rm pasta/tes*] (Deleta todos os arquivos que començam com 'te')
 [rm pasta/teste?] (Deleta todos os arquivos que tem um caractere qualquer no ?)
+
+# Manipulando Arquivos com o VI:
+[vi arquivo.txt]  (Abre arquivo)
+* Comandos em modo de visualização:
+[i] (Entra no modo de edição na posição atual do cursor)
+[a] (Entra no modo de edição na posição seguinte do cursor)
+[A] (Entra no modo de edição na última posição da linha do cursor)
+[x] (Apaga um caractere da posição atual.)
+[6 x] (Apaga 6 caracteres a partir posição atual.)
+[dd] (Exclui a linha ao qual o cursor está posicionado)
+[yy] (Copia linha a qual o cursor está posicionado)
+[3 yy] (Copia 3 linhas a partir da posição a qual o cursor está posicionado)
+[p] (Cola a linha copiada abaixo da posição a qual o cursor está posicionado)
+[10 p] (Cola a linha copiada abaixo da posição a qual o cursor está posicionado 10 vezes)
+[10 dd] (Exclui 10 linhas da posição do cursor para abaixo)
+[$] (Move o cursor para o final da linha no qual o cursor está posicionado)
+[0] (Move o cursor para o inicio da linha no qual o cursor está posicionado)
+[G] (Move o cursor para a última linha do arquivo)
+[1 G] (Move o cursor para a primeira linha do arquivo)
+[: w] (Salva arquivo)
+[: q] (Sai do arquivo apenas quando não há alteração)
+[: q!] (Sai do arquivo sem salvar, mesmo que tenha alteração)
+[: wq] (Salva o arquivo e sai)
+* Pesquisando no arquivo:
+[/] (Posibilita digitar uma expresssão a ser pesquisada. Case Sensitive)
+[n] (Vai para a próxima espressão encontrada na pesquisa)
+[N] (Vai para a espressão anterior encontrada na pesquisa)
+* Comandos em modo de edição:
+[ESC] (Sai do modo de edição)
 
 
 # Manipulando pastas:
@@ -45,9 +74,15 @@
 [unzip -q zipado.zip] (Unzipa sem cuspir informação) 
 
 
+# Compactação TAR/GZ:
+[tar -cz pasta > pasta_zipada.tag.gz] (Compacta)
+[tar -xz < pasta_zipada.tag.gz] (Descompacta)
+[tar -czf pasta_zipada.tag.gz pasta] (Compacta)
+[tar -xzf pasta_zipada.tag.gz] (Descompacta)
+[tar -vczf pasta_zipada.tag.gz pasta] (Compacta e exibe informação)
+[tar -vxzf pasta_zipada.tag.gz] (Descompacta e exibe informação)
+[tar -tzf pasta_zipada.tag.gz]] (Monstra coteúdo da pasta zipada)
 
-#Descompactando arquivo tar.gz e instalando:
-tar -jxvf [nome do arquivo]
 
 
 # Gerenciando processos:
@@ -56,3 +91,4 @@ ps
 pstree
 kill  [PID]
 kill -9 [PID]
+
