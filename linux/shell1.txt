@@ -15,10 +15,11 @@
 [touch teste.txt] (Caso o arquivo exista, altera a data de criação indicando que houve alguma alteração.)
 [echo "Hugo iguana" > teste.txt] (Cria um arquivo e escre um texto)
 [echo "Aline Lucia" >> teste.txt] (Adiciona outro texto ao arquivo)
-[cat teste.txt] (ler arquivo)
-[cat *.txt]      (Ler todos os arquivos txt)
-[cat teste?.txt] (Ler arquivos que possuem um carctere qualquer no lugar de ?)
-[cp arquivo1.txt arquivo2.txt] (copia conteúdo do arquivo1 para o arquivo2 sobrescrevendo todo o conteúdo.)
+[cat teste.txt] (Exibe todas as linhas de um arquivo)
+[cat *.txt]      (Exibe todas as linhas dos arquivos terminados em .txt)
+[cat teste?.txt] (Exibe linhas dos arquivos que possuem um carctere qualquer no lugar de ?)
+[cat teste.txt | grep palavra] (Exibe linhas de um arquivo filtradas por uma palavra')
+[cp  arquivo1.txt arquivo2.txt] (copia conteúdo do arquivo1 para o arquivo2 sobrescrevendo todo o conteúdo.)
 [mv arquivo.txt pasta1]        (move arquivo)
 [mv arquivo.txt arquivo3.txt]  (Renomeia o arquivo)
 [rm pasta/teste.txt] (Deleta arquivo)
@@ -84,11 +85,12 @@
 [tar -tzf pasta_zipada.tag.gz]] (Monstra coteúdo da pasta zipada)
 
 
-
 # Gerenciando processos:
 top
-ps
+[ps] (Exibe todos os processos em execução do bash atual)
+[ps -e] (Exibe todos os processos em execução) 
+[ps -ef] (Exibe todos os processos em execução com mais informação) 
+[ps -ef | grep chroome] (Exibe todos os processos em execução com mais informação filtrado por uma palavra) 
 pstree
-kill  [PID]
-kill -9 [PID]
-
+kill  [PID] (Mata o processo com o código do PID, dando uma chance de recuperação ao programa) 
+kill -9 [PID] (Mata o processo com o código do PID, sem chance de recuperação ao programa) 
