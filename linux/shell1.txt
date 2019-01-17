@@ -49,7 +49,7 @@
 [: q!] (Sai do arquivo sem salvar, mesmo que tenha alteração)
 [: wq] (Salva o arquivo e sai)
 * Pesquisando no arquivo:
-[/] (Posibilita digitar uma expresssão a ser pesquisada. Case Sensitive)
+[/] (Posibilita digitar uma expresssão a ser pesquisada. Case Sensitive. Digite Enter para pesquisar)
 [n] (Vai para a próxima espressão encontrada na pesquisa)
 [N] (Vai para a espressão anterior encontrada na pesquisa)
 * Comandos em modo de edição:
@@ -86,11 +86,15 @@
 
 
 # Gerenciando processos:
-top
-[ps] (Exibe todos os processos em execução do bash atual)
-[ps -e] (Exibe todos os processos em execução) 
-[ps -ef] (Exibe todos os processos em execução com mais informação) 
-[ps -ef | grep chroome] (Exibe todos os processos em execução com mais informação filtrado por uma palavra) 
+[ps] (Exibe processos em execução do bash atual)
+[ps -e] (Exibe processos em execução) 
+[ps -ef] (Exibe processos em execução com mais informação) 
+[ps -ef | grep chroome] (Exibe processos em execução com mais informação filtrado por uma palavra) 
+[ps -ef | grep top] (Exibe processos top sendo executados)
+[top] (Exibe processos com info. de consumo de memória e processamento ordernados por processamento)
 pstree
-kill  [PID] (Mata o processo com o código do PID, dando uma chance de recuperação ao programa) 
-kill -9 [PID] (Mata o processo com o código do PID, sem chance de recuperação ao programa) 
+[kill 1020] (Mata o processo com o código do PID 1020, dando uma chance de recuperação ao programa) 
+[kill -9 1020] (Mata o processo com o código do PID 1020, sem chance de recuperação ao programa)
+[killall firefox] (Mata todos os processo com nome firefox, dando uma chance de recuperação ao programa) 
+[killall firefox] (Mata todos os processo com nome firefox, sem chance de recuperação ao programa)
+
