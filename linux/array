@@ -1,0 +1,27 @@
+# Array:
+  #!/bin/bash
+  pessoas=(Aline Hugo "Bob" 'Half' 10)
+  carros[0]="HB20"
+  carros[1]="Celta"
+  carros[2]="Punto"
+  
+  # Exibe o primeiro item do array
+  echo $pessoas
+  
+  # Exibe o primeiro item do array
+  echo ${pessoas}
+  
+  # Exibe o primeiro item do array
+  echo ${pessoas[0]}
+  
+  # Exibe todos os itens do array
+  echo ${pessoas[@]}
+  
+  # Exibe o size do array
+  echo ${#pessoas[@]}
+  
+  # Exibe size do primeiro item do array
+  echo ${#pessoas[0]}
+
+  # Exibe todos os itens do array
+  for pessoa in ${pessoas[@]}; do echo $pessoa; done
