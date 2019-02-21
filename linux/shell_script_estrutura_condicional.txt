@@ -1,0 +1,194 @@
+--------------------------------------------------------
+# Arquivo "ifelseEx1.sh":
+  #!/bin/bash
+  PARAM1=$1
+  if [ -d $PARAM1 ];
+  then
+  echo "Voce informou um diretorio!"
+  elif [ -f $PARAM1 ]
+  then
+  echo "Voce informou um arquivo!"
+  else
+  echo "Eh apenas um texto!"
+  fi
+
+#Teste no Prompt
+  cleiton@linuxVM:~/projetos/shell script$ ./ifelseEx1.sh /home/cleiton/ar_condicionado.png
+  Voce informou um arquivo!
+  cleiton@linuxVM:~/projetos/shell script$ ./ifelseEx1.sh /home/cleiton/
+  Voce informou um diretorio!
+  cleiton@linuxVM:~/projetos/shell script$ ./ifelseEx1.sh Cleiton
+  Eh apenas um texto!
+--------------------------------------------------------
+# Arquivo "ifelseEx2.sh":
+  #!/bin/bash
+  PARAM1=$1
+  # ! NOT (NAO)
+  # -e Verifica se existe
+  if [ ! -e $PARAM1 ];
+  then
+  echo "Arquivo nao existe"
+  # -f Verifica se eh arquivo.
+  # -a Logica AND (E)
+  # -s Verifica se o arquivo é maior que zero
+  elif [ -f $PARAM1 -a -s $PARAM1 ]
+  then
+  echo "Voce informou um arquivo e ele nao esta vazio."
+  elif [ ! -f $PARAM1 ]
+  then
+  echo "O que voce informou nao eh um arquivo!"
+  else
+  echo "Voce informou um arquivo e ele esta vazio."
+  fi
+
+#Teste no Prompt
+  cleiton@linuxVM:~/projetos/shell script$ ls -lh arquivo*.txt
+  -rw-r--r-- 1 cleiton cleiton 0 Fev 5 19:59 arquivo1.txt
+  -rw-r--r-- 1 cleiton cleiton 19 Fev 5 19:59 arquivo2.txt
+  cleiton@linuxVM:~/projetos/shell script$ ./ifelseEx2.sh arquivo1.txt
+  Voce informou um arquivo e ele esta vazio.
+  cleiton@linuxVM:~/projetos/shell script$ ./ifelseEx2.sh arquivo2.txt
+  Voce informou um arquivo e ele nao esta vazio.
+  cleiton@linuxVM:~/projetos/shell script$ ./ifelseEx2.sh arquivo3.txt
+  Arquivo nao existe
+  cleiton@linuxVM:~/projetos/shell script$ ./ifelseEx2.sh /home/cleiton/
+  O que voce informou nao eh um arquivo!
+  cleiton@linuxVM:~/projetos/shell script$
+--------------------------------------------------------
+# Arquivo "ifelseEx3.sh":
+  #!/bin/bash
+  ARQ1=$1
+  ARQ2=$2
+  # -ot O arquivo eh mais antigo
+  # -nt O arquivo eh mais novo
+  # -ef E o mesmo arquivo
+  if [ $ARQ1 -ot $ARQ2 ];
+  then
+  echo "O arquivo $ARQ1 eh mais antigo que o $ARQ2"
+  ARQ_NOVO=$ARQ2
+  else
+  echo "O arquivo $ARQ2 eh mais antigo que o $ARQ1"
+  ARQ_NOVO=$ARQ1
+  fi
+  # Mostrando qual arquivo iremos analisar as permissoes
+  echo -e "nPortanto o arquivo a ser analisado eh: $ARQ_NOVOnn"
+  # Verificando se nao eh o mesmo arquivo
+  if [ $ARQ1 -ef $ARQ2 ];
+  then
+  echo "Eh o mesmo arquivo!"
+  exit 0
+  fi
+  # Exibindo o usuario no qual vamos verificar as permissoes
+  echo -e "Permissao do arquivo do usuario: $USERnn"
+  # Verificando as permissoes
+  # -x Execucao -w Gravacao -r Leitura
+  # Testa se o arquivo tem permissao de execucao, leitura e gravacao
+  if [ -x $ARQ_NOVO -a -r $ARQ_NOVO -a -w $ARQ_NOVO ];
+  then
+  echo "Permissao: rwx [TOTAL]"
+  # Senao testa se o arquivo tem permissao de execucao e gravacao ! nega para leitura
+  elif [ -x $ARQ_NOVO -a ! -r $ARQ_NOVO -a -w $ARQ_NOVO ];
+  then
+  echo "Permissao: -wx [GRAVACAO + EXECUCAO]"
+  # Senao testa se o arquivo tem permissao de execucao e leitura ! nega para gravacao
+  elif [ -x $ARQ_NOVO -a -r $ARQ_NOVO -a ! -w $ARQ_NOVO ];
+  then
+  echo "Permissao: r-x [LEITURA + EXECUCAO]"
+  # Segue a logic...
+  elif [ -x $ARQ_NOVO -a ! -r $ARQ_NOVO -a ! -w $ARQ_NOVO ];
+  then
+  echo "Permissao: --x [EXECUCAO]"
+  # Segue a logica...
+  elif [ ! -x $ARQ_NOVO -a -r $ARQ_NOVO -a ! -w $ARQ_NOVO ];
+  then
+  echo "Permissao: r-- [LEITURA]"
+  # Segue a logica...
+  elif [ ! -x $ARQ_NOVO -a ! -r $ARQ_NOVO -a -w $ARQ_NOVO ];
+  then
+  echo "Permissao: -w- [GRAVACAO]"
+  elif [ ! -x $ARQ_NOVO -a -r $ARQ_NOVO -a -w $ARQ_NOVO ];
+  then
+  echo "Permissao: rw- [LEITURA + GRAVACAO]"
+  else
+  echo "Permissao: --- [SEM PERMISSAO]"
+  fi
+  
+#Teste no Prompt
+  cleiton@linuxVM:~/projetos/shell script$ ls -lh arquivo*.txt
+  -rw-r--r-- 1 cleiton cleiton 0 Fev 5 19:59 arquivo1.txt
+  -rw-r--r-- 1 cleiton cleiton 19 Fev 5 19:58 arquivo2.txt
+  -r--r--r-- 1 cleiton cleiton 19 Fev 8 13:22 arquivo3.txt
+  --wxr--r-- 1 cleiton cleiton 19 Fev 8 14:02 arquivo4.txt
+  cleiton@linuxVM:~/projetos/shell script$ ./ifelseEx3.sh arquivo1.txt arquivo2.txt
+  O arquivo arquivo2.txt eh mais antigo que o arquivo1.txt
+  Portanto o arquivo a ser analisado eh: arquivo1.txt
+  Permissao do arquivo do usuario: cleiton
+  Permissao: rw- [LEITURA + GRAVACAO]
+  cleiton@linuxVM:~/projetos/shell script$ ./ifelseEx3.sh arquivo3.txt arquivo2.txt
+  O arquivo arquivo2.txt eh mais antigo que o arquivo3.txt
+  Portanto o arquivo a ser analisado eh: arquivo3.txt
+  Permissao do arquivo do usuario: cleiton
+  Permissao: r-- [LEITURA]
+  cleiton@linuxVM:~/projetos/shell script$ ./ifelseEx3.sh arquivo4.txt arquivo3.txt
+  O arquivo arquivo3.txt eh mais antigo que o arquivo4.txt
+  Portanto o arquivo a ser analisado eh: arquivo4.txt
+  Permissao do arquivo do usuario: cleiton
+  Permissao: -wx [GRAVACAO + EXECUCAO]
+  cleiton@linuxVM:~/projetos/shell script$
+--------------------------------------------------------
+
+# Arquivo "ifelseEx2.sh":
+  #!/bin/bash
+  NAME="Dir"
+  PERMISSAO="771"
+  PERM_DESC="rwxrwx--x"
+  # Gera um numero randomico
+  NUM1=$(echo $RANDOM)
+  # Aguarda 1s
+  sleep 1
+  # Gera outro numero randomico
+  NUM2=$(echo $RANDOM)
+  echo -e "ID1: $NUM1nID2: $NUM2nn"
+  # Verifica se a primeira variavel eh maior ou igual a segunda variavel
+  if [ $NUM1 -ge $NUM2 ];
+  then
+  echo -e "t$NUM1 eh maior que $NUM2"
+  else
+  echo -e "t$NUM1 eh menor que $NUM2"
+  fi
+  # Pegando o caminho do mkdir
+  MKDIR=$(which mkdir)
+  # Testo se mkdir possui permissao para executar no usuario atual, caso contrario
+  # || ira sair
+  test -x $MKDIR || exit 0
+  # Se chegou aqui eh porque passou no teste entao configuro o comando mkdir para
+  # /bin/mkdir -p -m 771, muito legal esse parametro de setar as permissoes na criacao
+  MAKE_DIR="$MKDIR -p -m $PERMISSAO"
+  # Chamo o MAKEDIR passo o NOME que dei na variavel NAME e junto o numero gerado
+  $MAKE_DIR $NAME$NUM1
+  $MAKE_DIR $NAME$NUM2
+  # Se o comando anterior executou sem problemas
+  # Usamos o $? para verificar
+  if [ $? -eq 0 ];
+  then
+  echo -e "n(*)Diretorios criado com sucesso!n"
+  # Listo os diretorios
+  ls -l | grep $NAME
+  # Mostro para o usuario as permissoes que foram setadas na criacao
+  echo -e "n(*)Permissoes: $PERMISSAO $PERM_DESC"
+  else
+  echo -e "n(*)Ocorreu um erro na criacao dos diretorios $NAME$NUM1 e $NAMENUM2!"
+  fi
+  
+#Teste no Prompt  
+  cleiton@linuxVM:~/projetos/shell script$ ./ifelseEx4.sh
+  ID1: 28928
+  ID2: 8346
+  28928 eh maior que 8346
+  (*)Diretorios criado com sucesso!
+  drwxrwx--x 2 cleiton cleiton 4096 Fev 13 23:09 Dir28928
+  drwxrwx--x 2 cleiton cleiton 4096 Fev 13 23:09 Dir8346
+  (*)Permissoes: 771 rwxrwx--x
+  cleiton@linuxVM:~/projetos/shell script$
+--------------------------------------------------------
+--------------------------------------------------------
