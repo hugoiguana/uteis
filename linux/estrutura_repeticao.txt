@@ -1,0 +1,59 @@
+# For:
+  #!/bin/bash
+  #Exemplo 1
+  echo "Contando ate 5"
+  for i in 1 2 3 4 5;
+  do
+  echo $i;
+  done
+
+  #Exemplo 2
+  echo "Contando ate 10"
+  for i in $(seq 10);
+  do
+  echo $i;
+  done
+
+  #Exemplo 3
+  echo "Contando ate 5 no estilo C"
+  for ((i=0; i<=5; i++))
+  do
+  echo "Executando o $i"
+  done
+  
+# While
+  #!/bin/bash
+  #Exemplo 1
+  BLOG="www.cleitonbueno.wordpress.com"
+  while [ "$BLOG" = "www.cleitonbueno.wordpress.com" ];
+  do
+  echo "Esse blog eh show!!!"
+  done
+
+  #Exemplo2
+  var_control=0
+  while true;
+  do
+  if [ $var_control -gt 10 ]; then
+  break
+  fi
+  echo Valor $var_control
+  # Incrementando var_control, funciona apenas em Bash
+  (( var_control++ ))
+  done
+  
+# Until:
+  #!/bin/bash
+  response=yes
+  count=0
+  until [ "$response" = "no" ];
+  do
+  (( count++ ))
+  echo "Laco $count"
+  #if [ $count -eq 5 ];
+  if [ $count -ge 5 ];
+  then
+  response=no
+  fi
+  sleep 1
+  done
