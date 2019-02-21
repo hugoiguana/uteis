@@ -1,0 +1,14 @@
+# Variáveis globais:
+  env  (Exibe todas as variáveis de ambiente globais)
+  $USER (Exibe o usuário atual)
+  $HOME (Exibe diretório padrão do usuário)
+  $PATH
+  $EDITOR (Exibe o editor de texto padrão)
+  $LANGUAGE
+  $SHELL (Exibe o shell padrão)
+  $PWD (Exibe o diretório atual)
+
+# Criando uma variável global:
+  pessoa='Hugo Iguana'
+  export pessoa
+  echo $pessoa
