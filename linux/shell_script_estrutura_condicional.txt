@@ -1,3 +1,4 @@
+Referência: https://cleitonbueno.com/shell-script-estrutura-condicional/
 --------------------------------------------------------
 # Arquivo "ifelseEx1.sh":
   #!/bin/bash
