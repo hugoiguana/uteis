@@ -1,0 +1,15 @@
+# Exibe funções criadas:
+[typeset -f]
+[typeset -f | less]
+[typeset -f | more] 
+
+# Exibe conteúdo de arquivo com configurações de aliases e funções que são carregados ao instanciar o sistema:
+[cd; ls -l; cat .bashrc | less;] 
+
+# Cria função:
+funcao_teste() {
+echo "hugo" >> texto1.txt;  
+echo "Aline" >> texto1.txt; 
+echo "hugo iguana" >> texto1.txt; 
+echo | cat texto1.txt | grep 'hugo' >> texto2.txt;
+}
