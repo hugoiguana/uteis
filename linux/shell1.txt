@@ -3,7 +3,8 @@
   [ls -a] (Lista arquivos e pastas ocultas)
   [ls -l]
   [ls -la]
-  [pwd]   (mostra o path do diretoriorio atual)
+  [pwd]   (Exibe o path do diretoriorio atual)
+  [whoami] (Exibe o nome do usuário logado)
   [cd ~]  (Diretório do usuário)
   [cd]    (Diretório do usuário)
   [cd /]  (Diretório raiz)
@@ -74,7 +75,6 @@
   [find . -iname '*foo*'] (Encontra arquivos na pasta atual com opção case insensitively)
   [find . -cmin -5] (Encontra arquivos na pasta atual alterados nos últimos 5 minutos) 
   [find . -ctime -7] (Encontra arquivos na pasta atual alterados nos últimos 7 dias)
-
 
 # Compactação ZIP:
   [zip -r zipado.zip assistidos/] (Zipa)
