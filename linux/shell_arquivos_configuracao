@@ -1,25 +1,43 @@
+Variáveis de ambiente, funções e aliases podem ser configurados automaticamente pelo bash com o uso de alguns arquivos
+de configuração, de modo a definir o ambiente operacional ao iniciar o sistema.
+Cada arquivo de configuração tem um escopo e momento de uso definidos, e o arquivo usado depende do método usado para 
+iniciar o bash.
+
+#Há três formas de iniciar o bash:
+    - Como um shell de login, iniciado na inicialização do sistema operacional;
+    - Como um shell interativo, iniciado ao abrir um shell(prompt de comandos);
+    - Como um shell não-interativo, iniciado ao rodar um script;
+
+
+[ls -a] = Exibindo arquivos e pastas ocultas.
 
 # Arquivos executados durante o login:
-[cd /; vi /etc/profile] = Arquivo de inicialização, executado durante o login e válido para todo o sistema; 
-    contém variáveis de ambiente e programas de inicialização.    
+    [cd /; vi /etc/profile] = Arquivo de inicialização, executado durante o login e válido para todo o sistema; 
+        contém variáveis de ambiente e programas de inicialização.    
     
-[cd; vi .bash_profile] = Se existir, será executado após /etc/profile durante o login. 
-  Cada usuário tem o seu e só é válido para o mesmo.
+    [cd; vi .bash_profile] = Se existir, será executado após /etc/profile durante o login. 
+        Cada usuário tem o seu e só é válido para o mesmo.
   
-[cd; vi .bash_login] = Se o .bash_profile não existir, será executado automaticamente durante o login. 
-  Cada usuário tem o seu e só é válido para o mesmo.
+    [cd; vi .bash_login] = Se o .bash_profile não existir, será executado automaticamente durante o login. 
+        Cada usuário tem o seu e só é válido para o mesmo.
   
-[cd; vi .profile] = Se nenhum dos dois anteriores existirem, será executado automaticamente durante o login. 
-  Cada usuário tem o seu e só é válido para o mesmo.
+    [cd; vi .profile] = Se nenhum dos dois anteriores existirem, será executado automaticamente durante o login. 
+        Cada usuário tem o seu e só é válido para o mesmo.
 
 
 # Arquivos executados durante a inicialização do bash(prompt de comandos):
-[cd; vi .bashrc] = Executado quando o bash é iniciado interativamente(prompt de comandos).
-
-[cd /; vi /etc/bashrc] ou [cd /; vi /etc/bash.bashrc] = Arquivo de inicialização, 
-  válido para todo o sistema executado pelo .bashrc do usuário para cada shell bash iniciado. Contém funções e aliases. 
+    [cd; vi .bashrc] = Executado quando o bash é iniciado interativamente(prompt de comandos).
+    
+    [cd /; vi /etc/bashrc] ou [cd /; vi /etc/bash.bashrc] = Arquivo de inicialização, 
+          válido para todo o sistema executado pelo .bashrc do usuário para cada shell bash iniciado. Contém funções e aliases. 
   
  # Outros:
-  [~/.inputrc] = Contém variáveis e configurações do modo de operação do bash em relação às teclas (Vinculaço).
-  
-  [~/.bash_logout] = Executado durante o logout.
+    [~/.inputrc] = Contém variáveis e configurações do modo de operação do bash em relação às teclas (Vinculaço).
+    [~/.bash_logout] = Executado durante o logout.
+
+
+# Shell não interativo e a variável de ambiente $BASH_ENV:
+    É o shell iniciado ao executar um script(shell script).
+    Quando um shell é iniciado em modo não-interativo, ele verifica a váriável BASH_ENV para descobrir se há comandos
+    de inicialização a executar. Por padão o valor desta variável não é configurado, ou seja, está vazia.
+    [echo $BASH_ENV] = Exibe conteúdo da variável BASH_ENV
