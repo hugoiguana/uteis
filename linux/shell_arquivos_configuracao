@@ -1,0 +1,25 @@
+
+# Arquivos executados durante o login:
+[cd /; vi /etc/profile] = Arquivo de inicialização, executado durante o login e válido para todo o sistema; 
+    contém variáveis de ambiente e programas de inicialização.    
+    
+[cd; vi .bash_profile] = Se existir, será executado após /etc/profile durante o login. 
+  Cada usuário tem o seu e só é válido para o mesmo.
+  
+[cd; vi .bash_login] = Se o .bash_profile não existir, será executado automaticamente durante o login. 
+  Cada usuário tem o seu e só é válido para o mesmo.
+  
+[cd; vi .profile] = Se nenhum dos dois anteriores existirem, será executado automaticamente durante o login. 
+  Cada usuário tem o seu e só é válido para o mesmo.
+
+
+# Arquivos executados durante a inicialização do bash(prompt de comandos):
+[cd; vi .bashrc] = Executado quando o bash é iniciado interativamente(prompt de comandos).
+
+[cd /; vi /etc/bashrc] ou [cd /; vi /etc/bash.bashrc] = Arquivo de inicialização, 
+  válido para todo o sistema executado pelo .bashrc do usuário para cada shell bash iniciado. Contém funções e aliases. 
+  
+ # Outros:
+  [~/.inputrc] = Contém variáveis e configurações do modo de operação do bash em relação às teclas (Vinculaço).
+  
+  [~/.bash_logout] = Executado durante o logout.
