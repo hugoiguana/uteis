@@ -35,3 +35,6 @@ Exemplo: Temos um diretório qualquer chamado mp3 que eu quero permissão total 
 permissão de apenas leitura para o meu grupo e nenhuma permissão para o resto do mundo. 
 O comando para executar essa ação é: 
 [chmod 740 /mp3]
+[chmod a+r arquivo.sh] (Permissão de leitura a todos os usuários)
+[chmod a+w arquivo.sh] (Permissão de escrita a todos os usuários)
+[chmod a+x arquivo.sh] (Permissão de execução a todos os usuários)
