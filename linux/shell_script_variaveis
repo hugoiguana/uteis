@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# O comando env:
+echo -n "O comando env exibe todas as variáveis globais e seus valores:"
+env
+
+# O comando set:
+echo -n "O comando set exibe todas as variáveis globais e seus valores:"
+set
+
+echo "Exibe o usuário logado: $USER" 
+echo "Exibe o id do usuário logado: $UID"
+echo "Exibe diretório padrão do usuário: $HOME"
+echo $PATH
+echo "Exibe o editor de texto padrão: $EDITOR"
+echo $LANGUAGE
+echo "Exibe o shell padrão: $SHELL"
+echo "Exibe o diretório atual: $PWD"
+
+
+# Define variáveis de usuário:
+pessoa="hugo iguana"
+idade=29
+# Imprime:
+echo "$pesso tem $idade anos."
+# Destrói:
+unset pessoa
+unset idade
