@@ -21,7 +21,9 @@
   [cat *.txt]      (Exibe todas as linhas dos arquivos terminados em .txt)
   [cat teste?.txt] (Exibe linhas dos arquivos que possuem um carctere qualquer no lugar de ?)
   [cat teste.txt | grep palavra] (Exibe linhas de um arquivo filtradas por uma palavra')
-  [cat teste.txt | more] (Exibe primeiras linhas de um arquivo que caibam no console e com opção de teclar enter para rolar as linhas)
+  [cat teste.txt | more] (Exibe primeiras linhas de um arquivo que caibam no console e com opção 
+      de teclar enter para rolar as linhas)
+  [cat teste.txt | less]
   [echo | cat teste1.txt | grep 'hugo' >> teste2.txt] (Escreve no arquivo teste2.txt todas as linhas filtradas com 'hugo' do arquivo teste1.txt)
   [cp  arquivo1.txt arquivo2.txt] (copia conteúdo do arquivo1 para o arquivo2 sobrescrevendo todo o conteúdo.)
   [mv arquivo.txt pasta1]        (move arquivo)
