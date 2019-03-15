@@ -5,6 +5,7 @@
   [ls -la]
   [pwd]   (Exibe o path do diretoriorio atual)
   [whoami] (Exibe o nome do usuário logado)
+  [$USER] (Exibe o nome do usuário logado)
   [cd ~]  (Diretório do usuário)
   [cd]    (Diretório do usuário)
   [cd /]  (Diretório raiz)
@@ -115,6 +116,7 @@
 [alias] (Exibe todos os alias locais criados no sistema e no shell)
 [alias hot = 'nautilus .'] (Cria um aliases)
 [unalias hot] (Deleta um aliases)
+
 
 
 
