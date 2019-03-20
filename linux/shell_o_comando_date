@@ -1,0 +1,45 @@
+#Terça
+echo `date +%A` 
+
+#Março
+echo `date +%B`
+
+#19/03/2019
+echo `date +%x`
+
+#19/03/2019
+echo `date +%d/%m/%Y`
+
+#19/03/19
+echo `date +%d/%m/%y`
+
+#19/03/19_22:08:15
+echo `date +%d/%m/%Y_%H:%M:%S`
+
+#19/03/19_22:08:15
+echo `date +%d/%m/%Y_%T
+
+#19/03/19_22:08:15
+echo `date +%x_%T`
+--------------------------------------------------
+
+%A : dia da semana (domingo,..., sábado).
+%B : nome do mês (janeiro,..., dezembro).
+%H : hora do dia (0 a 23).
+%M : minuto (0 a 59).
+%S : segundos (0 a 61).
+%T : hora no formato hh:mm:ss.
+%Y : ano.
+%a : dia da semana abreviado (dom,..., sab).
+%b : nome do mês abreviado (jan,..., dez).
+%c : dia da semana, data e hora.
+%d : dia do mês (00-31).
+%j : dia ano (1 a 366).
+%m : mês (1 a 12).
+%s : número de segundos desde das zero horas de 01/01/1970.
+%w : dia da semana, onde 0 = domingo, 1 = segunda,..., 6 = sábado.
+%x : representação da data local.
+%y : os dois últimos dígitos do ano.
+%r : formato de 12 horas completo (hh:mm:ss AM/PM)
+
+
