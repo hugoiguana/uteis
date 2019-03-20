@@ -78,6 +78,7 @@
   [find . -iname '*foo*'] (Encontra arquivos na pasta atual com opção case insensitively)
   [find . -cmin -5] (Encontra arquivos na pasta atual alterados nos últimos 5 minutos) 
   [find . -ctime -7] (Encontra arquivos na pasta atual alterados nos últimos 7 dias)
+  [grep -r "palavra" *] (Exibe nome dos arquivos e linhas com o texto encontrado em qualquer pasta e subpastas.)
 
 # Compactação ZIP:
   [zip -r zipado.zip assistidos/] (Zipa)
