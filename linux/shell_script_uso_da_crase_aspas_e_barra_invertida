@@ -1,0 +1,55 @@
+# A crase permite armazenar em uma variável um comando para ser executado.
+
+hoje=`date +%x_%T`
+echo "A Data de hoje é = $hoje"
+#Resultado: "Data de hoje é = 19/03/2019_22:13:15"
+
+echo `date +%x_%T`
+#Resultado: "Data de hoje é = 19/03/2019_22:13:15"
+-----------------------------------------------------------------------------
+# Aspas simples (‘)
+# As aspas simples são muito parecidas com as aspas duplas. 
+# É usada para delimitar qualquer dado alfanumérico ou até mesmo quando precisamos usar aspas dentro de um texto qualquer.
+# Com as aspas simples a execução de variáveis não é aceito.
+
+nome='Hugo'
+echo 'Meu nome é "Hugo"'
+#Resultado: Meu nome é "Hugo"
+echo 'Valor da variável $nome'
+#Resultado: Valor da variável $nome
+-----------------------------------------------------------------------------
+# Aspas duplas (“)
+# Bem parecidas com as aspas simples, uma de suas diferenças é a possibilidade de interpolação de variáveis. A interpolação nada mais é do que a inclusão de um valor de variável em outra
+
+nome='Hugo'
+echo "Meu nome é 'Hugo'"
+#Resultado: Meu nome é 'Hugo'
+
+echo "Valor da variável \$nome"
+#Resultado: Valor da variável $nome
+
+echo "Valor da variável = $nome"
+#Resultado: Valor da variável = Hugo
+-----------------------------------------------------------------------------
+# Barra(\)
+# É utilizado quando queremos que o script trate o $ como parte do conteúdo alfanumérico e não como indicador de variáveis.
+
+nome='Hugo'
+echo "Valor da variável \$nome"
+#Resultado: Valor da variável $nome
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
