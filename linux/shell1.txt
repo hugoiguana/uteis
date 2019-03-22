@@ -3,6 +3,7 @@
   [ls -a] (Lista arquivos e pastas ocultas)
   [ls -l]
   [ls -la]
+  [ls | grep "palavra"] (Lista arquivos e pastas filtrados por palavra)
   [pwd]   (Exibe o path do diretoriorio atual)
   [whoami] (Exibe o nome do usuário logado)
   [$USER] (Exibe o nome do usuário logado)
@@ -79,6 +80,12 @@
   [find . -cmin -5] (Encontra arquivos na pasta atual alterados nos últimos 5 minutos) 
   [find . -ctime -7] (Encontra arquivos na pasta atual alterados nos últimos 7 dias)
   [grep -r "palavra" *] (Exibe nome dos arquivos e linhas com o texto encontrado em qualquer pasta e subpastas.)
+  [grep -r "palavra" diretorio/*]
+  [grep -i "palavra" diretorio/*] (Case insensitive)
+  [grep -v "palavra" diretorio/*] (Busca as linhas onde não apareça a palavra)
+  [grep -riv "palavra" diretorio/*]]
+  [grep -iv "palavra" arquivo.txt | less]
+  [grep -iv "palavra" arquivo.txt >> hugo.txt] (Cria o arquivo hugo.txt com o resultado da busca)
 
 # Compactação ZIP:
   [zip -r zipado.zip assistidos/] (Zipa)
