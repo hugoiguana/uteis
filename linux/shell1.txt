@@ -120,6 +120,7 @@
   [killall firefox] (Mata todos os processo com nome firefox, sem chance de recuperação ao programa)
 
 # Outros:
+[uname -m] (Versão do SO. 32 ou 64 bits)
 
 
 # Aliases:
