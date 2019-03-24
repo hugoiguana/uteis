@@ -72,6 +72,10 @@ sudo apt update
 sudo apt install maven
 mvn -version
 
+#Postgres
+[sudo apt update]
+[sudo apt install postgresql postgresql-contrib]
+
 #GParted
 sudo apt-get install gparted
 
