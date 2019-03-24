@@ -21,8 +21,10 @@ sudo apt-get install smplayer smtube smplayer-themes
 # Brasero - Gravador de CD:
 sudo apt-get install brasero
 
+# Steam:
+sudo apt install steam
 
-
+--------------------------------------------Instalação DEV--------------------------------------------
 # Instalando JRE e JDK
 sudo apt-get remove openjdk* (Remove o OpenJDK)
 sudo apt-get update
@@ -41,8 +43,6 @@ JAVA_HOME="/usr/lib/jvm/java-8-oracle/jre/bin/"  (Colocar no final do arquivo, s
 source /etc/environment (Atualizar mudança realizada)
 
 
-
-
 # IntelliJ:
 sudo snap install intellij-idea-community --classic --edge
 
@@ -53,9 +53,6 @@ wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt install code
 
-
-# Steam:
-sudo apt install steam
 
 # Git
 sudo apt-get install git-core
@@ -73,8 +70,34 @@ sudo apt install maven
 mvn -version
 
 #Postgres
-[sudo apt update]
-[sudo apt install postgresql postgresql-contrib]
+[sudo apt-get update]
+[sudo apt-get install postgresql postgresql-contrib]
+[sudo apt-get install postgresql pgadmin3]
+[ls etc/postgresql/10/main/]
+[service postgresql]
+[service postgresql status]
+[sudo su postgres] (Loga no postgres)
+[psql] (Entra no sql)
+[\l] (Exibe databases)
+[\du] (Exibe usuários)
+[alter user postgres with password 'admin';] 
+[create user hugoiguana with password 'h33644';]
+[alter user hugoiguana with superuser;]
+[\du]
+[drop user hugoiguana;]
+[\q] (Sai do sql)
+[man psql] (Exibe ajuda)
+# Abra o pgadmin e configure uma conexão com os dados abaixo:
+---------------
+name: geanuncio
+Host: 127.0.0.1
+Port: 5432
+Username: hugoiguana
+Senha: h33644
+---------------
+
+
+
 
 #GParted
 sudo apt-get install gparted
