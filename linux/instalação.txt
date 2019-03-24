@@ -85,6 +85,7 @@ mvn -version
 [alter user hugoiguana with superuser;]
 [\du]
 [drop user hugoiguana;]
+[create database geanuncio;]
 [\q] (Sai do sql)
 [man psql] (Exibe ajuda)
 # Abra o pgadmin e configure uma conexão com os dados abaixo:
