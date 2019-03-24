@@ -74,3 +74,25 @@ mvn -version
 
 #GParted
 sudo apt-get install gparted
+
+
+#PopCorn Time:
+[sudo apt update && sudo apt install libcanberra-gtk-module libgconf-2-4]
+[sudo mkdir /opt/popcorn-time]
+[sudo wget -O- https://get.popcorntime.sh/build/Popcorn-Time-0.3.10-Linux-64.tar.xz | sudo tar Jx -C /opt/popcorn-time]
+[sudo ln -sf /opt/popcorn-time/Popcorn-Time /usr/bin/popcorn-time]
+[sudo nano /usr/share/applications/popcorntime.desktop]
+Insert the following content into the above created file:
+-------------
+[Desktop Entry]
+Version = 1.0
+Type = Application
+Terminal = false
+Name = Popcorn Time
+Exec = /usr/bin/popcorn-time
+Icon = /opt/popcorn-time/popcorntime.png
+Categories = Application;
+-------------
+[sudo wget -qO /opt/popcorn-time/popcorntime.png goo.gl/wz8ifr]
+
+
