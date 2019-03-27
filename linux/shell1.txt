@@ -12,26 +12,43 @@
   [cd /]  (Diretório raiz)
   [cd /home] (Diretório com todos os usuários)
   [man mv] (Exibe opções para o comando)
-
-# Manipulando Arquivos:
-  [touch teste.txt] (Cria um arquivo vazio)
-  [touch teste.txt] (Caso o arquivo exista, altera a data de criação indicando que houve alguma alteração.)
-  [echo "Hugo iguana" > teste.txt] (Cria um arquivo e escre um texto)
-  [echo "Aline Lucia" >> teste.txt] (Adiciona outro texto ao arquivo)
-  [cat teste.txt] (Exibe todas as linhas de um arquivo)
-  [cat *.txt]      (Exibe todas as linhas dos arquivos terminados em .txt)
-  [cat teste?.txt] (Exibe linhas dos arquivos que possuem um carctere qualquer no lugar de ?)
-  [cat teste.txt | grep palavra] (Exibe linhas de um arquivo filtradas por uma palavra')
-  [cat teste.txt | more] (Exibe primeiras linhas de um arquivo que caibam no console e com opção 
-      de teclar enter para rolar as linhas)
+  
+---------------------------Manipulando Arquivos------------------------------
+# Cria um arquivo vazio:
+  [touch teste.txt] 
+# Caso o arquivo exista, altera a data de criação indicando que houve alguma alteração:
+  [touch teste.txt] 
+# Redireciona a saída do texto para o arquivo 'teste.txt' sobrescrevendo todo o conteúdo:
+  [echo "Hugo iguana" > teste.txt]
+# Redireciona a saída do texto para o arquivo 'teste.txt' no final da linha:
+  [echo "Aline Lucia" >> teste.txt] 
+# Redireciona o arquvo "bash.bashrc", como entrada, para o comando wc, que exibe informações como linhas, palavras e tamanho      em bits do arquivo:
+  [wc < /etc/bash.bashrc]
+# Exibe todas as linhas de um arquivo:
+  [cat teste.txt] 
+# Exibe todas as linhas dos arquivos terminados em .txt:
+  [cat *.txt]     
+# Exibe linhas dos arquivos que possuem um carctere qualquer no lugar de ?
+  [cat teste?.txt]
+# Exibe linhas de um arquivo filtradas por uma palavra:
+  [cat teste.txt | grep palavra] 
+# Exibe primeiras linhas de um arquivo que caibam no console e com opção de teclar enter para rolar as linhas:
+  [cat teste.txt | more]
   [cat teste.txt | less]
-  [echo | cat teste1.txt | grep 'hugo' >> teste2.txt] (Escreve no arquivo teste2.txt todas as linhas filtradas com 'hugo' do arquivo teste1.txt)
-  [cp  arquivo1.txt arquivo2.txt] (copia conteúdo do arquivo1 para o arquivo2 sobrescrevendo todo o conteúdo.)
-  [mv arquivo.txt pasta1]        (move arquivo)
-  [mv arquivo.txt arquivo3.txt]  (Renomeia o arquivo)
-  [rm pasta/teste.txt] (Deleta arquivo)
-  [rm pasta/tes*] (Deleta todos os arquivos que començam com 'te')
-  [rm pasta/teste?] (Deleta todos os arquivos que tem um caractere qualquer no ?)
+# Redireciona o resultado das linhas filtradas com a palavra 'hugo' no arquivo 'teste1.txt' para o arquivo 'teste2.txt':
+  [echo | cat teste1.txt | grep 'hugo' >> teste2.txt] 
+# copia conteúdo do arquivo1 para o arquivo2 sobrescrevendo todo o conteúdo:
+  [cp  arquivo1.txt arquivo2.txt]
+# move arquivo:
+  [mv arquivo.txt pasta1]       
+# Renomeia o arquivo:
+  [mv arquivo.txt arquivo3.txt] 
+# Deleta arquivo
+  [rm pasta/teste.txt] 
+# Deleta todos os arquivos que començam com 'tes':
+  [rm pasta/tes*])
+# Deleta todos os arquivos que tem um caractere qualquer no ?
+  [rm pasta/teste?] 
 
 # Manipulando Arquivos com o VI:
   [vi arquivo.txt]  (Abre arquivo)
