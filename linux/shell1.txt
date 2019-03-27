@@ -24,6 +24,14 @@
   [echo "Aline Lucia" >> teste.txt] 
 # Redireciona o arquvo "bash.bashrc", como entrada, para o comando wc, que exibe informações como linhas, palavras e tamanho      em bits do arquivo:
   [wc < /etc/bash.bashrc]
+# Redirecionamento de entrada Inline:
+  [wc << IGUANA]
+  > Após escrever o comando acima, um subprompt será exibido onde estamos escrevendo essa linha até que a tag seja fechada 
+  > Isso é um redirecionamento de entrada Inline;
+  > Posso escrever quantas frases quiser;
+  > Ao final, fecho com a tag 'IGUANA' que escolhi;
+  > IGUANA
+
 # Exibe todas as linhas de um arquivo:
   [cat teste.txt] 
 # Exibe todas as linhas dos arquivos terminados em .txt:
