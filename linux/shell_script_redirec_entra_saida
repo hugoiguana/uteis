@@ -1,0 +1,19 @@
+
+-----------------------------Redirecionamento de Saída-----------------------------
+ # O mais comum é enviar a saída de um comando para um arquivo.
+ # Redireciona a saída do texto para o arquivo 'teste.txt' sobrescrevendo todo o conteúdo:
+  [echo "Hugo iguana" > teste.txt]
+# Redireciona a saída do texto para o arquivo 'teste.txt' no final da linha:
+  [echo "Aline Lucia" >> teste.txt] 
+  
+
+----------------------------Redirecionamento de Entrada----------------------------
+# Redireciona o arquvo "bash.bashrc", como entrada, para o comando wc, que exibe informações como linhas, palavras e tamanho      em bits do arquivo:
+  [wc < /etc/bash.bashrc]
+# Redirecionamento de entrada Inline:
+  [wc << IGUANA]
+  > Após escrever o comando acima, um subprompt será exibido onde estamos escrevendo essa linha até que a tag seja fechada 
+  > Isso é um redirecionamento de entrada Inline;
+  > Posso escrever quantas frases quiser;
+  > Ao final, fecho com a tag 'IGUANA' que escolhi;
+  > IGUANA--
