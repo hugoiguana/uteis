@@ -1,0 +1,34 @@
+OBS: Os aliases podem ser configurados através das seguintes formas abaixo:   
+1 - Diretamente no prompt:
+Ao fechar o bash a configuração é perdida.
+
+2 - No arquivo "/etc/bashrc":
+[cd /; cat /etc/bashrc]
+Vale para todos os usuários. E só precisa configurar uma única vez.
+
+3 - No arquivo ".bashrc" do usuário:
+[cd; cat .bashrc]
+Vale apenas para o usuário que foi configurado. E só precisa configurar uma única vez.
+
+4 - Pode-se criar um arquivo qualquer - apenas para configurar aliases/funções específicas
+ e chamar o mesmo no "/etc/bashrc" ou ".bashrc".
+------------------------------------------------------------------------------------------------------------
+
+
+------------------------------------------Meus Aliases-------------------------------------------
+# Aliases variados:
+aliases c=clear
+------------------------------------
+
+# Aliases para o git:
+aliases gs='git status'
+aliases ga='git add'
+aliases gc='git commit -m'
+aliases gp='git push'
+aliases gd='git diff'
+aliases gco='git checkout'
+aliases gb='git branch'
+aliases gm='git merge'
+aliases gr='git reset'
+------------------------------------
+------------------------------------
