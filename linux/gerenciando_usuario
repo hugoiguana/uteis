@@ -1,10 +1,11 @@
 # Lista usuários:
 [less /etc/passwd]
 
-# Adiciona um usuário:
-[adduser aline]
+# Lista grupos:
+[less /etc/group]
 
 # Adiciona um usuário:
+[adduser aline]
 [useradd aline]
 
 
