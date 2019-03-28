@@ -1,0 +1,84 @@
+# Lista usuários:
+[less /etc/passwd]
+
+# Adiciona um usuário:
+[adduser aline]
+
+# Adiciona um usuário:
+[useradd aline]
+
+
+# Quando um novo usuário é adicionado no Linux, as seguintes operações são executadas:
+# 1. O diretório home é criado (/home/username by default);
+# 2. Os arquivos ocultos abaixo são criados no seu diretório home:
+#  .bash_logout
+#  .bash_profile
+#  .bashrc
+# 3. Um mail spool é criado para o usuário em: /var/spool/mail/username;
+# 4.Um grupo é criado com o mesmo nome da conta do usuário;
+
+------------------------Entendendo /etc/passwd--------------------------------
+# A informação completa do usuário é guardada no arquivo "/etc/passwd".
+# Esse arquivo contém uma linha para cada conta de usuário e contém o formato abaixo:
+
+[username]:[x]:[UID]:[GID]:[Comment]:[Home directory]:[Default shell]
+EX: [less /etc/passwd]
+root:x:0:0:root:/root:/bin/bash
+postgres:x:122:127:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+hugoiguana:x:1000:1000:hugo,,,:/home/hugoiguana:/bin/bash
+aline:x:1001:1001:Aline Lúcia,,,:/home/aline:/bin/bash
+
+# [Username] = nome da conta do usuário;
+# [X] = Indica que a conta é protegida por uma senha, definida em "/etc/shadow", que é necessária para se logar;
+# [UID] = Número que representam a identificação do usuário non linux; 
+# [GID] = Número do grupo primário ao qual o usuário pertence;
+# [Comment] = Algum comentário a conta do usuário. Ex: Sobrenome, nome completo, etc.;
+# [Home directory] = Camnho absoluto do diretório home do usuário;
+# [Default shell] = Indica o shell que estará disponível para o usuário ao se logar;
+
+--------------------------Entendendo /etc/group--------------------------------
+# Informações dos grupos são gravadas no arquivo "/etc/group".
+# Cada linha tem o seginte formato:
+[Group name]:[Group password]:[GID]:[Group members]
+
+# [Group name] = Nome do grupo;
+# [Group password] = Um "x" indica que senha de grupo nao é utizada;
+# [GID] = Número identificador do crupo;
+# [Group members] = Uma lista de todos os usuários membros do grupo;
+
+EX: [less /etc/group]
+root:x:0:
+sudo:x:27:hugoiguana
+postgres:x:127:
+hugoiguana:x:1000:
+aline:x:1001:
+
+------------------------------Editando usuário----------------------------------
+[usermod [options] [username]]
+
+# Setar a data de expiração de uma conta:
+[usermod --expiredate 2014-10-30 aline]
+
+# Adicionando um usuário a grupos:
+ [usermod --append --groups root,sudo aline]
+ [usermod --aG root,sudo aline]
+ 
+# Removendo um usuário de um grupo:
+ 
+# Alterando o diretório home:
+ [usermod --home /home/alinelucia aline]
+
+# Alterando o shell padrão:
+ [usermod --shell /bin/sh aline]
+
+
+----------------------------Outros Comandos---------------------------------------
+# Exibe o número do grupo ao qual o usuário pertence:
+[groups aline]
+
+# Exibe o número identificador do usuário:
+[id aline]
+
+  
+
+
