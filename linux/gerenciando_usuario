@@ -1,14 +1,3 @@
-# Lista usuários:
-[less /etc/passwd]
-
-# Lista grupos:
-[less /etc/group]
-
-# Adiciona um usuário:
-[adduser aline]
-[useradd aline]
-
-
 # Quando um novo usuário é adicionado no Linux, as seguintes operações são executadas:
 # 1. O diretório home é criado (/home/username by default);
 # 2. Os arquivos ocultos abaixo são criados no seu diretório home:
@@ -17,6 +6,70 @@
 #  .bashrc
 # 3. Um mail spool é criado para o usuário em: /var/spool/mail/username;
 # 4.Um grupo é criado com o mesmo nome da conta do usuário;
+--------------------------------------------------------------------------------
+# Lista usuários:
+[cat /etc/passwd]
+[vi /etc/passwd]
+[nano /etc/passwd]
+[less /etc/passwd]
+[less /etc/passwd | grep aline]
+
+# Lista grupos:
+[less /etc/group | grep grupo_a]
+
+# Adiciona um usuário:
+[sudo adduser aline]
+[sudo useradd aline]
+
+# Excluindo um usuário:
+[sudo userdel --remove aline]
+
+------------------------------Editando usuário----------------------------------
+[usermod [options] [username]]
+
+# Setar a data de expiração de uma conta:
+[usermod --expiredate 2014-10-30 aline]
+
+# Adicionando um usuário a grupos:
+ [usermod --append --groups root,sudo aline]
+ [usermod --aG root,sudo aline]
+ 
+# Removendo um usuário de um grupo:
+ 
+# Alterando o diretório home:
+ [usermod --home /home/alinelucia aline]
+
+# Alterando o shell padrão:
+ [usermod --shell /bin/sh aline]
+
+----------------------------BLoqueando/Desbloqueando usuário----------------------
+[usermod --lock aline]
+[usermod --L aline]
+{usermod --unlock aline]
+[usermod --u aline]
+
+---------------------------------------Grupos-------------------------------------
+# Criando um grupo:
+[groupadd grupo_a]
+
+# Pesquisando o grupo criado:
+[less /etc/group | grep grupo]
+
+# Excluindo um grupo:
+[groupdel grupo_a]
+
+# Criando um grupo com permissão de leitura e escrita a arquivos que serão acessados por vários usuários:
+[groupadd grupo_a]
+[chown :grupo_a arquivo.txt] # Setando o grupo 'dono' do arquivo.
+[usermod -aG grupo_a aline] # Adicionando usuário ao grupo
+[usermod -aG grupo_a hugoiguana] # Adicionando usuário ao grupo
+
+----------------------------------Outros Comandos---------------------------------
+# Exibe o número do grupo ao qual o usuário pertence:
+[groups aline]
+
+# Exibe o número identificador do usuário:
+[id aline]
 
 ------------------------Entendendo /etc/passwd--------------------------------
 # A informação completa do usuário é guardada no arquivo "/etc/passwd".
@@ -54,32 +107,8 @@ postgres:x:127:
 hugoiguana:x:1000:
 aline:x:1001:
 
-------------------------------Editando usuário----------------------------------
-[usermod [options] [username]]
-
-# Setar a data de expiração de uma conta:
-[usermod --expiredate 2014-10-30 aline]
-
-# Adicionando um usuário a grupos:
- [usermod --append --groups root,sudo aline]
- [usermod --aG root,sudo aline]
- 
-# Removendo um usuário de um grupo:
- 
-# Alterando o diretório home:
- [usermod --home /home/alinelucia aline]
-
-# Alterando o shell padrão:
- [usermod --shell /bin/sh aline]
-
-
-----------------------------Outros Comandos---------------------------------------
-# Exibe o número do grupo ao qual o usuário pertence:
-[groups aline]
-
-# Exibe o número identificador do usuário:
-[id aline]
-
   
+
+
 
 
