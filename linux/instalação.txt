@@ -97,9 +97,10 @@ Username: hugoiguana
 Senha: h33644
 ---------------
 
+# Postman:
+snap install postman
 
-
-
+----------------------------------------------------------------------------------------------------------------
 #GParted
 sudo apt-get install gparted
 
