@@ -26,3 +26,9 @@ echo "$pesso tem $idade anos."
 # Destrói:
 unset pessoa
 unset idade
+
+# Exibe o status do último comando
+echo $?
+
+# Especifica um status de saída quando o script finaliza
+exit 6
