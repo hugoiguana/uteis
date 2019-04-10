@@ -1,0 +1,51 @@
+
+------------------------------------------------------------------------------
+# Utilizando calculadora bc para cálculos com pontos flutuantes:
+# Exemplo de uso direto no shell:
+hugoiguana@iguana:~$ bc -q
+scale=2
+x=2
+y=4
+x/y
+.50
+quit
+-------------------------------------
+hugoiguana@iguana:~$ var1=`echo "scale=2; 2/5" | bc`
+hugoiguana@iguana:~$ echo "O resultado é $var1"
+-------------------------------------
+------------------------------------------------------------------------------
+# Usando a calculadora dentro de um scropt:
+# Crie o arquivo "testebc.sh" com o conteúdo abaixo:
+
+hugoiguana@iguana:~$ vi testebc.sh
+
+#!/bin/bash
+var1=100
+var2=30
+var3=`echo "scale=4; $var1 / $var2" | bc `
+echo "Resultado: $var3"
+
+hugoiguana@iguana:~$ chmod 755 testebc.sh
+hugoiguana@iguana:~$ ./testebc.sh
+------------------------------------------------------------------------------
+
+# Usando "redirecionamento de entrada inline" para cálculos mais complexos:
+
+hugoiguana@iguana:~$ nano testebc.sh
+
+#!/bin/bash
+var1=6
+var2=5
+var3=4
+var4=`bc<<EOF
+scale=4
+a1=($var1 * $var2)
+b1=($var3 + $var1)
+a1+b1
+EOF
+`
+echo "Resultado: $var4"
+
+hugoiguana@iguana:~$ chmod a+x  testebc.sh
+hugoiguana@iguana:~$ ./testebc.sh
+------------------------------------------------------------------------------
