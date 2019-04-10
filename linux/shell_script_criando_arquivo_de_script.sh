@@ -23,7 +23,10 @@ whoami
 #
 #
 #
-#
-#
-#
+
+# Exibe o status do último comando
+echo $?
+
+# Especifica um status de saída quando o script finaliza
+exit 6
 
