@@ -8,6 +8,15 @@
   $SHELL (Exibe o shell padrão)
   $PWD (Exibe o diretório atual)
 
+# A varíavel $?
+  echo $? (Exibe o status de saída de um comando)
+  # Os status são:
+  0   - Comando completado com sucesso
+  1   - Erro geral desconhecido
+  126 - O comando no pode ser executado(permissões)
+  127 - Comando não encontrado
+  130 - Comando finalizado com Ctrl + C
+
 # Criando uma variável global:
   pessoa='Hugo Iguana'
   export pessoa
