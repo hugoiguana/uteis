@@ -8,6 +8,11 @@
   $SHELL (Exibe o shell padrão)
   $PWD (Exibe o diretório atual)
 
+# Criando uma variável global:
+  pessoa='Hugo Iguana'
+  export pessoa
+  echo $pessoa
+
 # A varíavel $?
   echo $? (Exibe o status de saída de um comando)
   # Os status são:
@@ -17,7 +22,12 @@
   127 - Comando não encontrado
   130 - Comando finalizado com Ctrl + C
 
-# Criando uma variável global:
-  pessoa='Hugo Iguana'
-  export pessoa
-  echo $pessoa
+# A variável IFS
+ echo IFS
+ # IFS(internal Field Separator), define uma lista de caracteres que o shel bash usa como separadores de campos.
+ # Por padrão são configurados como separador: espaço, tabulação e newline.
+ #OBS: É possível alterar essa lista de separadores como abaixo.
+  IFSOLD=$IFS
+  IFS='\n'
+  IFS=IFSOLD
+
