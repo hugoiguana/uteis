@@ -1,0 +1,9 @@
+# SALVANDO ALTERAÇÕES QUE ESTÃO NO WORKING DIRETORY E INDEX/STAGIN AREA:
+
+git stash list   (Lista todos os estados de stash criados.)
+git stash        (Faz com que as alterações que estão no working directory e no index sejam salvas, retornando o estado para o último commit.)
+git stash pop    (Faz com que o último estado salvo seja recuperado e, caso não haja conflitos, deletado da pilha de dados armazenados.)
+git stash pop stash@{1}
+git stash apply  (Usando a opção apply, recuperamos as últimas alterações da pilha sem removê-las.)
+git stash drop   (Faz com que o último estado salvo seja apagado. Também podemos utilizar o nome de cada elemento do stash para remover algum estado                  que não seja o último.)
+git stash clear  (Excluir todos os estados.)

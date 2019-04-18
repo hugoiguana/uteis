@@ -1,0 +1,26 @@
+# CHERRY-PICK
+
+OBS1: O commando cherry-pick possibilita trazer seletivamente commits de uma outra branch à branch atual;
+OBS2: Deve-se ter cuidado ao usá-lo, pois pode acarretar conflitos entre as branchs, visto que o commit que deseja levar
+pode ter alterações no mesmo trecho de código em outros commits que ainda não estão na branch destino;
+
+git cherry-pick [hash_commit]    (Traz o commit mas não realiza o commit e realiza o commit na branch atual.)
+git cherry-pick -n [hash_commit] (Traz o commit mas não realiza o commit, apenas adiciona alterações ao index.)
+git cherry-pick abcd..1234       (Possibilita pegar um intervalo de commits.)
+git cherry-pick [branch]         (Traz o último commit da branch especificada.)
+git cherry-pick ..master         (Traz todos os commits do topo da master até o HEAD da branch atual.)
+git cherry-pick master           (Traz o último commit da branch especificada.)
+git cherry-pick master^          (Traz o penúltimo commit da branch especificada.)
+git cherry-pick master~2         
+git cherry-pick master~3
+git cherry-pick master~4 master~2 (Traz o quinto commit e o terceiro da branche master e cria dois commits na branch atual.)
+git cherry-pick --ff ..next       (If history is linear and HEAD is an ancestor of next, update the working tree and advance the HEAD pointer to                                  match next. Otherwise, apply the changes introduced by those commits that are in next but not HEAD to the                                  current branch, creating a new commit for each new change.)
+git cherry-pick --help.
+
+
+# Usados quando ocorrer conflitos:
+git cherry-pick --continue
+git cherry-pick --abort
+git cherry-pick --quit
+
+------------------------------------------------------------------------------------

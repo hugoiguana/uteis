@@ -1,0 +1,146 @@
+--Referências:
+
+https://try.github.io/levels/1/challenges/2
+
+------------------------------------------------------------------------------------
+working directory
+index ou stagin area
+Head
+------------------------------------------------------------------------------------
+mkdir  (Cria pasta)
+rm     (deleta arquivo)
+cd     (Move entre as pastas)
+ls     (Lista arquivos)
+ls -l  (Lista pastas)
+ls -p  (Lista arquivos com mais detalhes)
+ls -a  (Lista arquivos ocultos)
+------------------------------------------------------------------------------------
+# Comandos úteis do VIM:
+
+vim [arquivo]  (Entra no vim)
+v			   (Entra no modo visual permitindo seleção caractere a caractere)
+V			   (Entra no modo visual permitindo seleção de linhas)
+CTRL+V         (Entra no modo visual permitindo seleção de bloco)
+i 			   (Entra no modo inserção)
+:	           (Entra no modo command-line)
+Esc            (Sai do modo de comando)
+:wq, ZZ ou :x  (Salvam o arquivo e sai do editor)
+:q             (Sai do editor)
+:q!            (Sai do editor sem salvar as alterações realizadas)
+y              (Copia)
+p              (Cola)
+------------------------------------------------------------------------------------
+
+
+# COMANDOS INICIAIS
+
+--Configurando chave de acesso:
+ssh-keygen -C "hugo.iguanaa@gmail.com" -t rsa
+
+-- Criando projeto git e dando push pro gitHub:
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/hugoiguana/game1.git
+git push -u origin master
+
+
+-- Clonar projeto
+git clone [url]
+git clone [branch] [url]
+
+git config user.name "hugo iguana"
+git config user.email "hugo.iguanaa@gmail.com"
+
+git config --global user.name "hugo iguana" (a opção global configura a variável para o computador inteiro.)
+git config --global user.email "hugo.iguanaa@gmail.com"
+
+------------------------------------------------------------------------------------
+
+# ATUALIZANDO BRANCH:
+
+git fetch origin           (Baixa branchs e tags mas não incorpora ao repositório origin.)
+git fetch origin --dry-run (Apenas visualiza todas as branchs e tags a serem baixadas.)
+git pull origin [branche]  (Baixa arquivos e realiza o merge com o repositório origin.)
+
+------------------------------------------------------------------------------------
+
+# ATALHO PARA ÚLTIMOS COMMITS:
+
+HEAD~1    (Ao digitarmos HEAD~ seguido de um número inteiro n, será feita uma referência ao n-ésimo commit anterior ao HEAD. 
+              Por exemplo, HEAD~1, faz referência ao penúltimo commit e HEAD~2, ao antepenúltimo. No caso específico do penúltimo commit, 
+              também pode-se referenciá-lo utilizando o atalho HEAD^.)
+
+-----------------------------------------------------------------------------------
+# DIVERSOS COMANDOS
+
+git branch    (Mostra as branchs locais)
+git branch -r (Mostra as branchs remotas)
+git branch -a (Mostra as branchs locais e remotas)
+git branch [nome da branch]
+git branch -b [branch]
+git branch -t [branch] origin/[nome da branch] (Cria uma branch lincando-a com a branch nova baixada com git pull)
+git branch -d (Deleta uma branch local se a mesma estiver sincronizada com uma remota)
+git branch -D (Deleta uma branch local mesmo que não esteja sincronizada com uma remota)
+
+git checkout [nome da branch]
+git checkout -- [arquivo]
+git checkout -t origin/[branch] (Muda para a branch e já cria um link entre a local e a remota)
+
+git log
+git log -p
+git log -p forms/OLecd/services/OLecdServices.java (Mostra o histórico de alteração do arquivo)
+git log -p -2 [arquivo]
+git log --graph
+git log
+git log -1 [arquivo]    
+git log --oneline -2    (Log últimos 2 commits resumidos)
+git log --stat -1       (Mostra quantida de arquivos e linhas alteradas)
+git log -p -1 [arquivo] (Último comite do arquivo, mostrando as diferenças)=
+
+git whatchanged         (Semelhante ao git log)
+git whatchanged -p
+git whatchanged -p -2
+
+git blame [arquivo]            (Mostra informações como usuários e data de alteração do último comit de cada linha do arquivo)
+git blame -L 100,110 [arquivo] (Mostra informações apenas para as linhas passadas no Range)
+
+git diff [arquivo]
+git diff [versao1] [versao2]
+git diff                   (Diff local X área stage)
+git diff --staged          (Diff do stage X último commit)
+git diff HEAD^^ [arquivo]  (Diff do arquivo não comitado X arquivo último commit)
+git diff [arquivo]         (Diff do arquivo não comitado X arquivo último commit)
+git diff [arquivo]         (Diff do arquivo não comitado X arquivo último commit)
+git diff 6c0fae4 [arquivo] (Diff do arquivo não comitado X arquivo commit específico)
+git diff 222cccc..8877887  (Diff entre dois commits) 
+git diff 8877887~2         (Diff entre um commit e os 2 commits imediatamente anteriores) 
+
+git ls-files                 (Mostra arquivos gerenciados pelo git)
+git status
+
+git fetch origin             (verifica todas as atualizações que foram realizadas no repositório de atalho origin.)
+git add [arquivo]
+git add [arquivo1] [arquivo2] [arquivo3]
+git add .
+git add -i
+
+git commit 
+git commit -m 'Mensagem do comite'
+git commit -a -m 'Mensagem do comite'
+git commit --amend           (Alterar mensagem do comite.)                  
+
+git push origin [branche]
+git push -u origin [branche] (Cria a branch e linca a branch local com a remota)
+git push -d origin design    (Deleta a branch remota)
+git push origin :design      (Deleta a branch remota)
+git pull origin [branche]
+git pull                     (Baixa todas as branchs)
+
+git tag
+
+git mv arquivo.java arquivo_1.java         (Renomeando arquivos)
+git mv arquivo.java imagens/arquivo_1.java (Movendo arquivos)
+git rm arquivo.java                        (Remove o arquivo após commit e adiciona a remoção ao stage)
+
+------------------------------------------------------------------------------------

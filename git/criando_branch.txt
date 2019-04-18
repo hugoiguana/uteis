@@ -1,0 +1,8 @@
+------------------------------------------------------------------------------------
+# CRIANDO BRANCH:
+
+git checkout [nome_branch]
+git checkout -b [nome_branch]
+git branch                                          (Visualiza branchs criadas localmente)
+git branch -D [nome_branch]                         (Deleta branch localmente)
+git push [nome do origin] [nome do branch] --delete (Deleta branch  remotamente)

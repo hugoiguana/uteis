@@ -1,0 +1,29 @@
+# ATUALIZANDO UMA BRANCH COM TODOS OS COMITS DE OUTRA BRANCH COM O COMANGO REBASE:
+
+git checkout [banch_2] (Move-se para a branch que se queira atualizar)
+git rebase [banch_1]   (Atualiza a atual[banch_2] com todos os commits da [banch_1], preservando a ordem dos commits.)
+
+OBS1: O comando REBASE faz com que a nova base da branch [banch_2] seja atualizada com o último commit que está na branch [banch_1].
+Nesse instante, os commits feitos em [banch_2] são movidos para uma branch temporária e o git atualiza a nova base de commits. 
+Após essa atualização, o próprio Git traz de volta os commits que estão na branch temporária e os aplica sobre a nova base, um de cada vez,
+fazendo com que você resolva os conflitos de cada commit da [banch_2] que for aplicado. 
+Desta forma não são criados outros commits para resolver os conflitos, mas sim resolve os conflitos alterando os determinados commits da [banch_2].
+
+OBS2: Este comando é útil pois evita criar um commit para resolver todos conflitos de uma branch com outra. 
+Logo os commits ficam mais concisos e fáceis de serem rastreados.
+
+OBS3: Quando os commits que foram movidos para a branch temporária são aplicados de volta na [banch_2], pode-se ocorrer conflito, caso
+ ocorra, pode-se escloher uma das opções abaixo para solucioná-los:
+
+git rebase --continue (Deve ser utilizado após a resolução manual de conflitos.)
+git rebase --skip     (Faz com que suas alterações do commit em questão da [banch_2] sejam descartadas.)
+git rebase --abort    (Aborta o rebase e voltar ao estado original da [banch_2].)
+ 
+
+------------------------------------------------------------------------------------
+# REALIZANDO MERGE
+
+git checkout [banch_1] (Move-se para a branch que se queira atualizar, fazendo merge com outra branch.)
+git merge [banch_2]  (Realiza o merge na [banch_1] atualizando todos os commits do [banch_2].)
+
+------------------------------------------------------------------------------------

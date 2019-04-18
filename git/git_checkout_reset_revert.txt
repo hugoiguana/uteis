@@ -1,0 +1,33 @@
+# DESFAZENDO/DELETANDO ALTERAÇÕES DE ARQUIVOS E COMMITS:
+
+OBS1: O commando git reset permite desfazer qualquer número de commits, bastando utilizar o hash do commit que queremos manter como HEAD. 
+Contudo, todos os commits que foram realizados após ele serão descartados, 
+perdendo todas as novas funcionalidades.
+
+git checkout HEAD [arquivo] (Reverte alterações quando o arquivo ainda não está no index/stagin area)
+git checkout [arquivo]      (Reverte alterações quando o arquivo ainda não está no index/stagin area)
+git checkout -- [arquivo]   (Reverte alterações quando o arquivo ainda não está no index/stagin area)
+
+git reset HEAD [arquivo]           (Reverte alterações no arquivo que estão no index para o working directory.)
+git reset [hash_do_commit]         (Reverte alterações do histórico local de commits, do index, mas não doworking directory.)
+git reset HEAD~1                   (Reverte alterações(ÚLTIMO commit) do histórico local de commits, do index, mas não do working directory.)
+git reset --soft [hash_do_commit]  (Reverte alterações do histórico local de commits, mas não são removidas do index.)
+git reset --soft HEAD~2
+git reset --hard [hash_do_commit]  (Reverte alterações do histórico local de commits, do index quanto do working directory, permanentemente.)
+git reset --hard HEAD~5
+------------------------------------------------------------------------------------
+
+# REVERTENDO ALTERAÇÕES DE COMMITS:
+
+OBS1: Quando desejamos remover commits que foram realizados há algum tempo, a melhor maneira seria revertendo-os, isto é, apenas desfazendo as alterações daqueles commits. Todos os outros commits serão mantidos em seu respectivo estado. 
+    Isso é feito utilizando o comando git revert passando como argumento o hash do commit que se deseja reverter. 
+    Ao digitar o comando, um novo commit revertendo as alterações do commit escolhido será realizado 
+    e o editor de texto padrão se abrirá para que se possa digitar a mensagem do commit. 
+    Para que o comando seja utilizado, é necessário que o Working Directory e o Index estejam "limpos", ou as alterações atuais serão descartadas.
+
+git revert [hash_do_commit]    (Permite desfazer qualquer número de commits, bastando utilizar o hash do commit que queremos manter como HEAD. 
+                                    Contudo, todos os commits que foram realizados após ele serão descartados, 
+                                    perdendo todas as novas funcionalidades.)
+                                    
+git revert -n [hash_do_commit] (As alterações do commit são revertidas porém são adicionadas ao workind diretory antes de criar um novo commit de                                  reversão.)
+
