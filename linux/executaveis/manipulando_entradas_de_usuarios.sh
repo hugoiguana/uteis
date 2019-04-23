@@ -21,6 +21,7 @@
 #  entre aspas, EX: 
 #  $(10)
 
+echo ------------------------------------------------------------------
 echo "Calcula a multiplicação de dois números:"
 x=$[ $1 * $2 ]
 echo "$1 x $2 = $x"
@@ -28,16 +29,4 @@ echo "$1 x $2 = $x"
 # OBS: Para executar esse script chame da seguinte forma:
 # ./manipulando_entradas_de_usuarios.sh 2 5
 
-
-# Variáveis de parâmetros especiais:
-#  $# : Contém o númetro de parâmetros de linha de comando fornecidos 
-#  ao rodar o script.
-# Ex: 
-
-if [ $# -le 1 ]
-then
- echo "Error: Digite ao menos dois parâmetros de entrada"
-fi  
-
-
-
+echo  -------------------------------------------------------------------
