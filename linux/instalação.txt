@@ -124,4 +124,11 @@ Categories = Application;
 -------------
 [sudo wget -qO /opt/popcorn-time/popcorntime.png goo.gl/wz8ifr]
 
+----------------------------------------------------------------------------------------------------------------
+#QBittorrent
+[sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable]
+[sudo apt-get update]
+[sudo apt-get install qbittorrent]
+
+
 
