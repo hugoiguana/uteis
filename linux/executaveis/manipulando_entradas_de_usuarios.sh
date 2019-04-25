@@ -25,6 +25,8 @@ echo ------------------------------------------------------------------
 echo "Calcula a multiplicação de dois números:"
 x=$[ $1 * $2 ]
 echo "$1 x $2 = $x"
+echo "Quantidade de parâmetros = $#"
+echo "Os parâmetros passados são: $*"
 
 # OBS: Para executar esse script chame da seguinte forma:
 # ./manipulando_entradas_de_usuarios.sh 2 5
