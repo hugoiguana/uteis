@@ -74,6 +74,8 @@ HEAD~1    (Ao digitarmos HEAD~ seguido de um número inteiro n, será feita uma 
 -----------------------------------------------------------------------------------
 # DIVERSOS COMANDOS
 
+git config --list (Exibe configurações atuais do Git)
+
 git branch    (Mostra as branchs locais)
 git branch -r (Mostra as branchs remotas)
 git branch -a (Mostra as branchs locais e remotas)
