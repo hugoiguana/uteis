@@ -1,0 +1,8 @@
+
+# Tipos de dependências:
+- Direta: Declarada explicitamente no POM.
+- Transitiva: 
+
+# Comandos
+[mvn dependency:tree] -- Exibe a lista de dependências
+
