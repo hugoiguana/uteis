@@ -98,7 +98,11 @@ git log
 git log -1 [arquivo]    
 git log --oneline -2    (Log últimos 2 commits resumidos)
 git log --stat -1       (Mostra quantida de arquivos e linhas alteradas)
-git log -p -1 [arquivo] (Último comite do arquivo, mostrando as diferenças)=
+git log -p -1 [arquivo] (Último comit do arquivo, mostrando as diferenças)=
+git log origin..master --stat (Exibe comits pendentes de push e quais foram os arquivos modificados.)
+git log origin..master -p (Exibe comits pendentes de push e alterações feitas nos arquivos modificados.)
+
+
 
 git whatchanged         (Semelhante ao git log)
 git whatchanged -p
