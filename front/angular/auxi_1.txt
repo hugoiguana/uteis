@@ -1,0 +1,50 @@
+
+---------------------------------------------------------------------------------------------------------
+# Instalação:
+	1 - Node     
+		https://nodejs.org/en/
+		$ node -v
+		
+	2 - Angular Cli:
+		$ sudo npm install -g @angular/cli
+		$ ng version
+
+	3 - Typescript:
+		$ sudo npm install -g typescript
+---------------------------------------------------------------------------------------------------------
+
+# Comandos do Angular Cli:
+	$ ng new novo-projeto
+
+---------------------------------------------------------------------------------------------------------
+# Arquivos e diretórios importantes:
+	1 - angular.json
+		Configurações  do projeto angular.
+		
+	2 - package.json
+		Configurações do npm, como, dependências instaladas no projeto angular 
+		e definição de comandos de scrips que podem ser executados em linha de comando.
+		
+	3 - tsconfig.json
+		Configurações do typescript.
+		
+	4 - tslint.json
+	
+	5 - environments
+		Este diretório contém os arquivos "environment.ts" e "environment.prod.ts" os quais podem ser utilizados para
+		configurar váriáveis/objetos de acordo com o ambiente levantado.
+		Exemplo de como buildar ou subir a aplicação de acordo com o ambiente:
+			#build
+			$ ng build --environment=production
+			$ ng b -prod
+			#serve
+			$ ng serve --environment=production
+			$ ng s -prod
+	
+---------------------------------------------------------------------------------------------------------
+# Criação do projeto
+---------------------------------------------------------------------------------------------------------
+# Subindo aplicação:
+	$ ng serve
+
+---------------------------------------------------------------------------------------------------------
