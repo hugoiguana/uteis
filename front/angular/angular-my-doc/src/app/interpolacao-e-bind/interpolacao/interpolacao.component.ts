@@ -9,10 +9,16 @@ export class InterpolacaoComponent implements OnInit {
 
   texto: string = 'Interpolação funciona!';
   estiloVermelho = 'estilo1';
+  verdadeiro: boolean = true;
+  false = false;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getValorQualquer() : number {
+    return 10;
   }
 
 }
