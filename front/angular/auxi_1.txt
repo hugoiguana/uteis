@@ -11,10 +11,20 @@
 
 	3 - Typescript:
 		$ sudo npm install -g typescript
+		
+	4 - Bootstrap
+		$ npm install --save @ng-bootstrap/ng-bootstrap
 ---------------------------------------------------------------------------------------------------------
 
 # Comandos do Angular Cli:
 	$ ng new novo-projeto
+    $ cd novo-projeto
+	$ ng g c template-simples
+	$ ng g m interpolacao-e-bind
+	$ ng g c interpolacao-e-bind/interpolacao
+	$ ng g c interpolacao-e-bind/property-binding
+	$ ng g c interpolacao-e-bind/one-way-databind
+	$ 
 
 ---------------------------------------------------------------------------------------------------------
 # Arquivos e diretórios importantes:
@@ -47,4 +57,12 @@
 # Subindo aplicação:
 	$ ng serve
 
+---------------------------------------------------------------------------------------------------------
+# Compilando arquivo Typescript
+	$ tsc arquivo.ts
+	
+	OBS: Para utilizar o comando "tsc" necessita instalar o typescript com o comando abaixo:
+	$ sudo npm install -g typescript
+---------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------
