@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TemplateSimplesComponent } from './template-simples/template-simples.component';
+import { InterpolacaoEBindModule } from './interpolacao-e-bind/interpolacao-e-bind.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { TemplateSimplesComponent } from './template-simples/template-simples.co
     TemplateSimplesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    InterpolacaoEBindModule
   ],
   providers: [],
   bootstrap: [AppComponent]
