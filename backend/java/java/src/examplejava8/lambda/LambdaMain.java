@@ -19,5 +19,7 @@ public class LambdaMain {
 
         SortOldWay.sort(developerList);
         SortWithLambda.sort(developerList);
+        ForEach.test(developerList);
+        Filter.test(developerList);
     }
 }
