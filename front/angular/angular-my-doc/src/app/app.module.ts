@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TemplateSimplesComponent } from './template-simples/template-simples.component';
 import { InterpolacaoEBindModule } from './interpolacao-e-bind/interpolacao-e-bind.module';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+import { FormsModule } from './forms/forms.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     InterpolacaoEBindModule,
-    NgbModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

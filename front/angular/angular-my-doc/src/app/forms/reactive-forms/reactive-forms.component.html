@@ -1,0 +1,99 @@
+<div class="container">
+
+  <h3>Reactive form</h3>
+
+  <br>
+  <section>
+    <h4>Simple Use</h4>
+    <div class="row">
+      <div class="col">
+          <input [formControl]="name" type="text" class="form-control" placeholder="Name">
+      </div>
+      <div class="col">
+          <input [formControl]="price" type="text" class="form-control" placeholder="Price">
+      </div>
+      <p><button (click)="updateValues1()" class="btn btn-primary">Update values</button></p>  
+    </div>
+    <div class="row">
+      <div class="col">
+          <p>Name: {{ name.value }}</p>
+      </div>
+      <div class="col">
+          <p>Price: {{ price.value }}</p>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+  <br>
+  <section>
+    <h4>Grouping form controls</h4>
+    <form [formGroup]='form1' (ngSubmit)='submitForm2()'>    
+      <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Name" formControlName="name">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Price" formControlName="price">
+        </div>
+        <p><button (click)="updateValues2()" class="btn btn-primary">Update values</button></p>  
+      </div>
+      <div class="row">
+        <div class="col">
+            <button type="submit" class="btn btn-primary" [disabled]="!form1.valid">Submit</button>
+        </div>
+      </div>
+    </form>
+  </section>  
+
+  <hr>
+  <br>
+  <section>
+      <h4>Creating nested form groups</h4>
+      <form [formGroup]='form2' (ngSubmit)='submitForm3()'>    
+        <div class="row">
+          <div class="col">
+              <input type="text" class="form-control" placeholder="Name" formControlName="name">
+          </div>
+          <p><button (click)="updateValues3()" class="btn btn-primary">Update values</button></p>  
+        </div>
+        <div formGroupName="address" class="row">
+          <div class="col">
+              <input type="text" class="form-control" placeholder="Street" formControlName="street">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+              <button type="submit" class="btn btn-primary" [disabled]="!form2.valid">Submit</button>
+          </div>
+        </div>
+      </form>
+    </section>  
+
+
+  <!-- <section>
+    <h4>Creating nested form groups</h4>
+  
+    <form [formGroup]='form2' (ngSubmit)='submitForm3()'>    
+      <label for="name">
+          Name: <input type="text" id="name" name="name" formControlName="name" />
+      </label>
+      <div formGroupName="address">
+        <h5>Address</h5>
+        <label for="street">
+            Street: <input type="text" formControlName="street" />
+        </label>    
+      </div>
+      <p>
+        <button (click)="updateValues3()" class="btn btn-primary">Update values</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!form2.valid">Submit</button>
+      </p>
+      
+    </form>
+  </section> -->
+
+
+
+
+
+</div>

@@ -13,6 +13,7 @@
 		$ sudo npm install -g typescript
 		
 	4 - Bootstrap
+		$ npm install bootstrap --save
 		$ npm install --save @ng-bootstrap/ng-bootstrap
 ---------------------------------------------------------------------------------------------------------
 
