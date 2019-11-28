@@ -154,5 +154,10 @@
 [unalias hot] (Deleta um aliases)
 
 
+# Install files:
+- Deb files:
+[sudo dpkg -i code_1.40.2-1574694120_amd64.deb]
+
+
 
 
