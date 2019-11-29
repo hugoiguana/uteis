@@ -1,0 +1,15 @@
+# Install Express:
+  npm install --save express
+
+# Compile angular:
+ ng build --prod
+
+# Start the node server:
+  node server.js
+
+# Start the node server(When this command was configured in "scripts" session on package.json):
+  npm run start:node
+ -- In "scripts" package.json we have the command bellow:
+   "start:node" : "node ./backend/server.js"
+
+
