@@ -1,0 +1,69 @@
+# Install Heroku on linux:
+  sudo snap install heroku --classic
+
+# Login to Heroku:
+heroku login
+
+# Checking prerequisites:
+ node --version
+ npm --version
+ git --version
+
+# Create an app on Heroku:
+ heroku create
+
+# Ensure that at least one instance of the app is running:
+ heroku ps:scale web=1
+ heroku ps:scale web=0
+
+# Open the URL
+ heroku open
+
+# Heroku logs
+ heroku logs --tail
+
+# Checking how many dynos are running using:
+ heroku ps
+
+# Start the application locally:
+ heroku local web
+
+
+# Push to Heroku:
+ git push heroku master
+
+
+
+## Addons ##
+
+# List addons installed:
+ heroku addons
+
+# Install addons(Mongodb in this case):
+ heroku addons:create mongolab:sandbox
+
+
+## Config Vars ##
+
+# Config vars in Heroku: 
+ heroku config:set DB_NAME=hugo
+ heroku config:set DB_PASSWORD=1234
+
+# Show the vars configured in Heroku:
+ heroku config
+
+
+## Config a Data base ## 
+# Install Postgress
+ heroku addons:create heroku-postgresql:hobby-dev
+OBS: This creates a database, and sets a DATABASE_URL environment variable (you can check by running heroku config).
+ heroku config
+
+# Install mongoDb:
+  heroku addons:create mongolab:hobby-dev
+
+# Connect to the database:
+ heroku pg:psql
+
+
+
