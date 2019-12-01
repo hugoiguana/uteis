@@ -1,6 +1,12 @@
 # Install Express:
   npm install --save express
 
+# Install NodeMon to reload automatically the application:
+  npm install --save-dev nodemon
+
+# Install dotenv to config envirollment vars:
+  npm install --save dotenv
+
 # Compile angular:
  ng build --prod
 
