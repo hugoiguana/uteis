@@ -7,6 +7,9 @@
 # Install dotenv to config envirollment vars:
   npm install --save dotenv
 
+# Install mongoose(A framework to manage mongoDb connection):
+  npm install --save mongoose
+
 # Compile angular:
  ng build --prod
 
