@@ -7,7 +7,7 @@ Ao fechar o bash a configuração é perdida.
 Vale para todos os usuários. E só precisa configurar uma única vez.
 
 3 - No arquivo ".bashrc" do usuário:
-[cd; cat .bashrc]
+[cd; cat .bashrc] ou [cd; cat .bash_aliases]
 Vale apenas para o usuário que foi configurado. E só precisa configurar uma única vez.
 
 4 - Pode-se criar um arquivo qualquer - apenas para configurar aliases/funções específicas
