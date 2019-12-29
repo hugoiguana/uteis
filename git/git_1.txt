@@ -147,7 +147,16 @@ git push origin :design      (Deleta a branch remota)
 git pull origin [branche]
 git pull                     (Baixa todas as branchs)
 
-git tag
+# Usando Tags:
+git tag v.01
+git tag -a <name> -m <message>
+git show v.01 (Exibe informações da tag)
+git tag (Exibe tags criadas)
+git tag -l "v.*" (Pesquisando tags)
+git tag -d v.01 (Deleta tag)
+git push --delete origin v.01 (Deleta no repositorio do servidor)
+git push origin v.01
+
 
 git mv arquivo.java arquivo_1.java         (Renomeando arquivos)
 git mv arquivo.java imagens/arquivo_1.java (Movendo arquivos)
