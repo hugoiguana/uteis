@@ -1,0 +1,46 @@
+OBS: Os aliases podem ser configurados através das seguintes formas abaixo:   
+1 - Diretamente no prompt:
+Ao fechar o bash a configuração é perdida.
+
+2 - No arquivo "/etc/bashrc":
+[cd /; cat /etc/bashrc]
+Vale para todos os usuários. E só precisa configurar uma única vez.
+
+3 - No arquivo ".bashrc" do usuário:
+[cd; cat .bashrc] ou [cd; cat .bash_aliases]
+Vale apenas para o usuário que foi configurado. E só precisa configurar uma única vez.
+
+4 - Pode-se criar um arquivo qualquer - apenas para configurar aliases/funções específicas
+ e chamar o mesmo no "/etc/bashrc" ou ".bashrc".
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------Configurando Meus Aliases-----------------------------------------
+1 - Executar o comando abaixo para entrar na pasta do seu usuário:
+$ cd
+
+2 - Procure pelo arquivo abaixo e abra-o:
+$ nano .bashrc
+
+3 - Cole os alias abaixo no final do arquivo ".bashrc" ou cole no arquivo ".bash_aliases", o qual é chamado pelo arquivo ".bashrc":
+----------------------------------------
+# Geral
+alias c=clear
+
+# Git
+alias ga='git add'
+alias gd='git diff'
+alias gpu='git pull'
+alias gp='git push'
+alias gst='git status'
+alias gc='git commit -m'
+alias gckr='git checkout --'
+
+
+
+# Variados:
+# Diretório dos meus projetos:
+alias hup='cd $HOME/Documentos/projetos'
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------

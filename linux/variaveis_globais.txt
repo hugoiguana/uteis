@@ -31,3 +31,14 @@
   IFS='\n'
   IFS=IFSOLD
 
+# Variavel PATH:
+  # Adicionar caminho ao PATH:
+  export PATH=$PATH:/home/usuario/caminho_customizado
+
+  # Remover caminho do PATH:
+  PATH = $(echo "$PATH" | sed -e 's/:\/home\/usuario\/bin//')
+
+
+
+
+
