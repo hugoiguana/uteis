@@ -158,6 +158,13 @@
 - Deb files:
 [sudo dpkg -i code_1.40.2-1574694120_amd64.deb]
 
+# History command
+echo HISTSIZE
+~/.bash_history
+history
+history 1
+history 1 | grep git
+
 
 
 
