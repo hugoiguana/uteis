@@ -1,0 +1,11 @@
+
+
+ionic start photo-gallery
+ionic start photo-gallery tabs --type=angular --capacitor
+ionic build
+ionic cap add ios
+ionic cap add android
+ionic cap copy
+ionic cap sync
+ionic cap open ios
+ionic cap open android
