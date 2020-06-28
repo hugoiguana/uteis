@@ -1,0 +1,5 @@
+# Install:
+  https://ionicframework.com/docs/angular/your-first-app
+  
+  npm install -g @ionic/cli native-run cordova-res
+  npm install @ionic/pwa-elements
