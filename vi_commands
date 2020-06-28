@@ -1,0 +1,28 @@
+# Manipulando Arquivos com o VI:
+  [vi arquivo.txt]  (Abre arquivo)
+  * Comandos em modo de visualização:
+  [i] (Entra no modo de edição na posição atual do cursor)
+  [a] (Entra no modo de edição na posição seguinte do cursor)
+  [A] (Entra no modo de edição na última posição da linha do cursor)
+  [x] (Apaga um caractere da posição atual.)
+  [6 x] (Apaga 6 caracteres a partir posição atual.)
+  [dd] (Exclui a linha ao qual o cursor está posicionado)
+  [yy] (Copia linha a qual o cursor está posicionado)
+  [3 yy] (Copia 3 linhas a partir da posição a qual o cursor está posicionado)
+  [p] (Cola a linha copiada abaixo da posição a qual o cursor está posicionado)
+  [10 p] (Cola a linha copiada abaixo da posição a qual o cursor está posicionado 10 vezes)
+  [10 dd] (Exclui 10 linhas da posição do cursor para abaixo)
+  [$] (Move o cursor para o final da linha no qual o cursor está posicionado)
+  [0] (Move o cursor para o inicio da linha no qual o cursor está posicionado)
+  [G] (Move o cursor para a última linha do arquivo)
+  [1 G] (Move o cursor para a primeira linha do arquivo)
+  [: w] (Salva arquivo)
+  [: q] (Sai do arquivo apenas quando não há alteração)
+  [: q!] (Sai do arquivo sem salvar, mesmo que tenha alteração)
+  [: wq] (Salva o arquivo e sai)
+  * Pesquisando no arquivo:
+  [/] (Posibilita digitar uma expresssão a ser pesquisada. Case Sensitive. Digite Enter para pesquisar)
+  [n] (Vai para a próxima espressão encontrada na pesquisa)
+  [N] (Vai para a espressão anterior encontrada na pesquisa)
+  * Comandos em modo de edição:
+  [ESC] (Sai do modo de edição)
