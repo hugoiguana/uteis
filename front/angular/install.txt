@@ -1,0 +1,15 @@
+
+# See the link bellow before install:
+  https://angular.io/guide/setup-local
+
+# Prerequisites
+  Nodejs;
+  NPM package manager;
+
+# Install angular CLI:
+  npm install -g @angular/cli
+  ng --version
+  
+# Update angular:
+
+# Remove angular:
