@@ -1,6 +1,7 @@
 
 
 ionic start photo-gallery
+ionic start photo-gallery blank --type=angular --capacitor
 ionic start photo-gallery tabs --type=angular --capacitor
 ionic build
 ionic cap add ios
