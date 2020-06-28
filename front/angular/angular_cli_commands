@@ -1,0 +1,9 @@
+
+$ ng new novo-projeto
+$ cd novo-projeto
+$ ng g c template-simples
+$ ng g m interpolacao-e-bind
+$ ng g c interpolacao-e-bind/interpolacao
+$ ng g c interpolacao-e-bind/property-binding
+$ ng g c interpolacao-e-bind/one-way-databind
+$ 
