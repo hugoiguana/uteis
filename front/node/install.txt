@@ -1,0 +1,13 @@
+
+# Install NPM and Nodejs from NPM(Node package manager):
+	https://linuxize.com/post/how-to-install-node-js-on-ubuntu-18.04/
+	node -v
+	npm -v
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash	
+	nvm install node 
+	nvm install 12.18.1
+	nvm ls
+	nvm use 12.18.1
+	nvm --version
+	node -v
+	npm -v
