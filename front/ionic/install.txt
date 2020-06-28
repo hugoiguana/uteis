@@ -3,3 +3,6 @@
   
   npm install -g @ionic/cli native-run cordova-res
   npm install @ionic/pwa-elements
+  
+ # Unstall
+  npm uninstall -g ionic
