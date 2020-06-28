@@ -1,31 +1,13 @@
 
 ---------------------------------------------------------------------------------------------------------
 # Instalação:
-	1 - Node     
-		https://nodejs.org/en/
-		$ node -v
-		
-	2 - Angular Cli:
-		$ sudo npm install -g @angular/cli
-		$ ng version
-
-	3 - Typescript:
-		$ sudo npm install -g typescript
 		
 	4 - Bootstrap
 		$ npm install bootstrap --save
 		$ npm install --save @ng-bootstrap/ng-bootstrap
 ---------------------------------------------------------------------------------------------------------
 
-# Comandos do Angular Cli:
-	$ ng new novo-projeto
-    $ cd novo-projeto
-	$ ng g c template-simples
-	$ ng g m interpolacao-e-bind
-	$ ng g c interpolacao-e-bind/interpolacao
-	$ ng g c interpolacao-e-bind/property-binding
-	$ ng g c interpolacao-e-bind/one-way-databind
-	$ 
+
 
 ---------------------------------------------------------------------------------------------------------
 # Arquivos e diretórios importantes:
