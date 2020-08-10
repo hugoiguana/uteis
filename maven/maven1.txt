@@ -3,6 +3,49 @@
 - Direta: Declarada explicitamente no POM.
 - Transitiva: 
 
-# Comandos
-[mvn dependency:tree] -- Exibe a lista de dependências
+------------------------------------------------------------------------------------------------
+# INSTALLATION:
+Maven is a build and dependency management tool for Java based application development. 
+Just like other Java based development tools, it is not installed as Windows service, 
+rather it is configured using windows environment variables.
+
+-> Download Maven and add ‘MAVEN_HOME’ to the emvirolment variable:
+-> Include ‘maven/bin’ directory in ‘PATH’ variable
+	To run maven from command prompt, this is necessary. Update the PATH variable with 'Maven-installation/bin' directory.
+-> Verify maven in console
+	$ mvn -version
+
+------------------------------------------------------------------------------------------------
+# Settings File:
+	The Maven installation directory: $M2_HOME/conf/settings.xml [global settings]
+	The user’s home directory: ${user.home}/.m2/settings.xml [user settings]	
+------------------------------------------------------------------------------------------------
+CREATING A PROJECT
+# Create a project in a non-interactive:
+	$ mvn archetype:generate 
+			-DgroupId=com.howtodoinjava 
+			-DartifactId=DemoJavaProject
+			-DarchetypeArtifactId=maven-archetype-quickstart 
+			-DinteractiveMode=false
+			
+# Create a project a non-interactive: 
+	$ mvn archetype:generate	
+	
+
+# Create a Web project in a non-interactive:	
+	$ mvn archetype:generate 
+				-DgroupId=com.howtodoinjava 
+				-DartifactId=demoWebApplication
+				-DarchetypeArtifactId=maven-archetype-webapp 
+				-DinteractiveMode=false	
+	
+# Convert to eclipse dynamic web project:	
+	$ mvn eclipse:eclipse -Dwtpversion=2.0
+	
+------------------------------------------------------------------------------------------------
+
+# COMANDS USEFULL:
+
+# Show de dependency tree:
+	$ mvn dependency:tree
 
