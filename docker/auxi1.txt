@@ -1,0 +1,28 @@
+
+
+
+------------------------------------------------------------
+docker images
+docker images | grep image_name*
+docker ps
+docker ps -a
+docker stop [image name or image id]
+docker rm [image name or image id]
+docker rm [image name or image id] -f
+docker exec -it [image name or image id] bash
+
+docker build -t hugo/microservices-java:latest .
+docker push hugo/microservices-java:latest
+
+docker run -d ubuntu
+docker run -it ubuntu /bin/bash
+
+docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=Backoffice -e MYSQL_USER=hugo -e MYSQL_PASSWORD=hugo backoffice-db
+docker exec -it [container_id] bash root@[container_id]:/# mysql -uroot -p
+------------------------------------------------------------
+# Docker compose:
+
+docker-compose up
+docker-compose up --build --force-recreate
+docker-compose up --build --force-recreate --remove-orphans
+------------------------------------------------------------
