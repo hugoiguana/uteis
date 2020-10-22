@@ -23,6 +23,7 @@ gradle tasks
 ---------------------------------
 # Gradle Wrapper:
 
+gradle wrapper
 .\gradlew build
 .\gradlew tasks
 
