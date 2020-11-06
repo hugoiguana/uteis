@@ -1,0 +1,10 @@
+node init
+node init -y
+node .\file.js
+
+# Installing packages for an API server purpose
+npm install http express debug --save
+npm install
+
+# 
+npm start
