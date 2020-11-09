@@ -38,10 +38,10 @@ sudo update-alternatives --config javac
 
 #Configurando variável JAVA_HOME:
 sudo update-alternatives --config java (Pegar o camingo do Java instalado)
-sudo nano /etc/enviroment (Abrir o arquivo de configuração)
+sudo nano /etc/environment (Abrir o arquivo de configuração)
 JAVA_HOME="/usr/lib/jvm/java-8-oracle/jre/bin/"  (Colocar no final do arquivo, salvar e sair)
 source /etc/environment (Atualizar mudança realizada)
-
+            
 
 # IntelliJ:
 sudo snap install intellij-idea-community --classic --edge
