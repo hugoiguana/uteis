@@ -29,3 +29,8 @@ console.log(typeof x8);
 console.log(typeof x9);
 console.log(typeof x10);
 console.log(typeof x11);
+
+
+
+if (typeof "ok" === 'string')
+    console.log('It is a string');

@@ -21,9 +21,9 @@ cars = new Array(2);
 cars[0] = 'celta';
 console.log(cars);
 
-
 cars[0] = 'celta';
 cars[1] = 'Hb20';
+
 
 console.log('# Using some Array functions: ');
 console.log(cars.toString());
