@@ -1,0 +1,29 @@
+FROM node
+
+WORKDIR /app
+
+COPY package.json /app
+
+# The RUN command will be executed when the image is created.
+RUN npm install
+
+COPY . /app
+
+# It defines an argument with a value(80) default. This argument can be passed on build the image.
+# Note that arguments can not be used on the CMD command, because it's a runtime command.
+ARG DEFAULT_PORT=80
+
+# It Defines an environment variable.
+#ENV PORT 80
+ENV PORT %DEFAULT_PORT
+
+# Expose ports on Dockerfile is optional, actually it doesn't do anything. It's only to document purpose.
+# EXPOSE 80 
+EXPOSE $PORT
+
+
+# Create an anonymous and temporary volume. This folder will be recreated when the container was stoped and started again, therefore their content won't be held:
+VOLUME ["/app/any_folder"]
+
+# The CMD command will be executed when the container execute and must to be the last command in this file.
+CMD ["node", "server.js"]

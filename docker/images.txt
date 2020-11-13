@@ -1,0 +1,47 @@
+
+
+# Show images:
+	docker images
+	docker images | grep image_name*
+	
+	
+# Build an image based on the Dockerfile:
+	docker build . 
+	docker build -t hugo/microservices-java:latest .	
+	
+	# Tag a name to an image:
+	docker build hugo:latest .
+	docker build hugo:1.0.1 .
+	
+	
+# Removing images:
+	docker rmi [image id or name]
+	
+	
+# Show information about the image:	
+	docker image inspect [image id or name]
+	
+	
+# Publish the image to the dorcker hub:	
+	docker push [docker_hub_id]/[repository_name]:[tag_name]
+	docker push hugoiguana/appnode
+	docker push hugoiguana/appnode
+	docker push hugoiguana/appnode:latest
+	
+	# Before to push the image you can login:
+		docker login
+		docker logout
+	
+	# Before to push the image you must to have an image with the same name. You can do that in two ways:
+		# Creating the image with the same name:
+			docker build -t hugoiguana/appnode .
+		# Renaming an existing image with the same name:
+			docker tag appnode:latest hugoiguana/appnode
+			
+			
+	# Getting an image from docker hub:
+	docker pull hugoiguana/appnode
+	
+	
+	# Remove all images not used in any container either stoped:
+	docker image prune -a

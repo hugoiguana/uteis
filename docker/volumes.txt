@@ -1,0 +1,68 @@
+
+# Volumes:
+# We have three kind of volumes whitch are: "Anonymous volume", "Named volume" and "Bind Mount".
+	
+	
+	# "Anonymous volume":
+		# Created specifically for a single container;
+		# Survives container shutdown/restart unless "--rm" is used;
+		# can not be shared across containers;
+		# Since it's anonymous, it can't be re-used(even on same image)
+			docker run -v /docker_folder
+			docker run -v /app/data					
+				# You can define on the Dockerfile too:
+					VOLUME ["docker_folder"]
+	
+	
+	# "Named volume":
+		# Created in general - not tied to any specific container; 
+		# Survives container shutdown/restart - removal via Docker CLI;
+		# Can be shared across containers;
+		# Can be re-used for same container(Across restarts);
+			docker run -v folder_name:/docker_folder	
+			docker run -v project_images:/app/images					
+				# it can't be created on the Dockerfile;
+	
+	
+	# "Bind Mount":
+	# Location on host file system, not tied to any specific container;
+	# Survives container shutdown/restart - removal on host fs;
+	# Can be shared across containers;
+	# Can be re-used for same container(Across restarts);
+	# This is ideal when you want to pin your project folder(located at your local host) to the container folder.
+	# So, on this way you can edit your project's files and this modifications will be reflected on the container without the needs of rebuild the docker image.
+		docker run -v full_path_host_folder:/app/docker_folder	
+		docker run -v /home/hfm/project/:/app
+		docker run -v "/home/hfm/project/:/app"
+		docker run -v $(pwd):/app # On Linux
+		docker run -v "%cd%":/app # On Windows
+			# it can't be created on the Dockerfile;
+				# You can set this volume Read-lony: So, this way the container can't change any file inside this folder.
+					docker run -v /home/hfm/project/:/app:ro
+			
+	
+	
+	# You can create many volumes:
+		docker run -v project_images:/app/images -v "/home/hfm/project/:/app"
+	
+	
+	# Pay attention on the situation bellow:
+	# In a node project you have the folder "node_modules" that will be installed(npm install) by the dockerfile, but you nedd to 
+	# configure your app's folder as a volume, because you want to change the project's files on your local machine and this changes must be reflected directly on the docker container.
+	# So, to not occur override between the folders "app" and "app/node_modules" you must to configure the "node_modules" as an anonymous volume like this:
+		docker run -v "/home/hfm/project/:/app" -v /app/node_modules
+		
+				
+	# Create a volume manually:
+		docker volume create [name_volume]
+		
+		
+	# Remove a volume:
+		docker volume rm [volume_name]
+		
+		
+	# Inspect a volume:
+		docker volume inspect [volume_name]
+		
+	# Remove all volumes unused:
+		docker prune

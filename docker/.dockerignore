@@ -1,0 +1,5 @@
+
+# Here you can ignore all folders and files that you don't want to pull in the container through the COPY(Dockerfile) command.
+
+Dockerfile
+.git
