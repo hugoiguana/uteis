@@ -1,0 +1,26 @@
+
+# Building images:
+	$ docker build -t mongodb-image
+	$ docker build -t node-backend-image
+	$ docker build -t react-frontend-image
+
+
+# Starting containers:
+	$ docker run --name mongodb -v data:/data/db --rm -d --network mynetwork \
+	-e MONGO_INITDB_ROOT_USERNAME=iguana_user \
+	-e MONGO_INITDB_ROOT_PASSWORD=123456 \
+	mongodb-image
+
+	$ docker run --name node-backend \
+	-v /home/hfm/projects/backend/nodeapp:/app \
+	-v logs:/app/logs \
+	-v /app/node_modules \
+	-e MONGO_USER=iguana_user \
+	-e MONGO_PASSWORD=123456 \
+	--rm -d --network  mynetwork -p 80:80 node-backend-image
+	
+	$ docker run --name react-frontend \
+	-v /home/hfm/projects/frontend/src:/app/src \
+	-v /app/node_modules \
+	--rm --it -p 3000:3000 react-frontend-image
+

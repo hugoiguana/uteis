@@ -1,0 +1,42 @@
+
+
+ # Communication between the container and the host:
+	Using the "host.docker.internal":	
+		With the property "host.docker.internal" you can communicate, inside your docker container, with the "localhost" like this:			
+			For example:
+				Instead using it:				
+					mongoose.connect("mongodb://localhost:27017/database", {useNewUrlParser: true}).then(() => {
+						console.log('Connecteed to the database.');
+					}).catch(() => {
+						console.log('Connection failed.');
+					});
+				
+				Use it and it should be work:			
+					mongoose.connect("host.docker.internal", {useNewUrlParser: true}).then(() => {
+						console.log('Connecteed to the database.');
+					}).catch(() => {
+						console.log('Connection failed.');
+					});				
+				
+			
+	
+# Communication between containers:
+
+		$ docker network --help
+		$ docker network create network1
+		$ docker network ls
+		$ docker run --name mongodb-test -d --network network1 mongo
+		
+			OBS: You must to create the network before using it in run command, because it is not created automatically as the volume is.
+		
+			Now you can use the same network created before inside your app to point to the mongo(inside another container):
+					mongoose.connect("mongodb-test", {useNewUrlParser: true}).then(() => {
+						console.log('Connecteed to the database.');
+					}).catch(() => {
+						console.log('Connection failed.');
+					});							
+						OBS: Pay attention that "mongodb-test" is the name of container.
+				
+			After configuring the network with the mongo in your app you can start your app container like this:					
+				$ docker run --name myapp --network network1 -d  --rm -p 3000:3000 image_name
+		
