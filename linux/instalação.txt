@@ -25,43 +25,43 @@ sudo apt-get install brasero
 sudo apt install steam
 
 --------------------------------------------Instalação DEV--------------------------------------------
-# Instalando JRE e JDK
-sudo apt-get remove openjdk* (Remove o OpenJDK)
-sudo apt-get update
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java8-installer (Instala JRE/JDK)
-java - version
-javac - version
-sudo update-alternatives --config java (Escolher versão DEFAULT do JAVA instaladas)
-sudo update-alternatives --config javac
+# Instalando JAVA 8:
+ https://computingforgeeks.com/how-to-install-java-8-on-ubuntu/
+ https://computingforgeeks.com/how-to-install-java-8-on-ubuntu/
+ https://computingforgeeks.com/how-to-install-java-11-on-ubuntu-debian-linux/
+ https://computingforgeeks.com/how-to-set-default-java-version-on-ubuntu-debian/
 
-#Configurando variável JAVA_HOME:
-sudo update-alternatives --config java (Pegar o camingo do Java instalado)
-sudo nano /etc/environment (Abrir o arquivo de configuração)
-JAVA_HOME="/usr/lib/jvm/java-8-oracle/jre/bin/"  (Colocar no final do arquivo, salvar e sair)
-source /etc/environment (Atualizar mudança realizada)
+  $ sudo apt install openjdk-8-jdk
+  java -version
+  javac -version
+
+Set Default Java version:
+  $ update-java-alternatives --list
+  $ sudo update-alternatives --config java
+  $ java -version
+  $ sudo update-alternatives --config javac
+  $ javac -version  
             
 
 # IntelliJ:
-sudo snap install intellij-idea-community --classic --edge
+ $ sudo snap install intellij-idea-community --classic --edge
 
 # Visual Studio:
-sudo apt update
-sudo apt install software-properties-common apt-transport-https wget
-wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-sudo apt install code
+ $ sudo apt update
+ $ sudo apt install software-properties-common apt-transport-https wget
+ $ wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+ $ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+ $ sudo apt install code
 
 
 # Git
-sudo apt-get install git-core
-git --version
+ $ sudo apt-get install git-core
+ $ git --version
 
 #Mavem
-sudo apt update
-sudo apt install maven
-mvn -version
+ $ sudo apt update
+ $ sudo apt install maven
+ $ mvn -version
 
 #Postgres
 [sudo apt-get update]
