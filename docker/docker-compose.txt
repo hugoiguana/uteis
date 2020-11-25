@@ -1,0 +1,15 @@
+# Basics commands:		
+	$ docker-compose build
+	$ docker-compose up --help
+	$ docker-compose up
+	$ docker-compose up frontend # Starting just one service of the docker-compose file
+	$ docker-compose up mysql backend frontend # Starting specifics services of the docker-compose file
+	$ docker-compose up --build # Will rebuild images if it was changed.
+	$ docker-compose up --build --force-recreate
+	$ docker-compose up --build --force-recreate --remove-orphans	
+	$ docker-compose up -d
+	$ docker-compose up run npm init
+	$ docker-compose up run --rm npm init
+	$ docker-compose down
+	$ docker-compose down -v
+	

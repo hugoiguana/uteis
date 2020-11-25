@@ -26,4 +26,10 @@ EXPOSE $PORT
 VOLUME ["/app/any_folder"]
 
 # The CMD command will be executed when the container execute and must to be the last command in this file.
+# Pay attention that this command will be override with you run the container passing a command like this: "docker run node npm init"
 CMD ["node", "server.js"]
+
+# This command is similar to the "CMD" command, but with a significant difference. 
+# The diference is that with ENTRYPOINT when you run a container passing a command, this command will be appended to the commands in the ENTRYPOINT.
+# So, this way you can run the container like that: "docker run node init"
+ENTRYPOINT ["npm"]

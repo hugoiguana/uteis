@@ -1,79 +1,45 @@
 
-------------------------------------------------------------
-docker --help
-docker ps --help
-------------------------------------------------------------
+# Basics commands:		
 
-# Show all the container in execution:
-	docker ps
-
-	# Show all the container either execution or not:
-		docker ps -a
-
-
-# Execute a command inside a container alive:
-	docker exec -it [image name or image id] bash
-
-
-# Start a container based on an image:
-
-	# Local port 8080 and container por 80.
-		docker run -p 8080:80 [image]   
-		
-		docker run -it ubuntu /bin/bash
+	$ docker --help
 	
-	# Start a container in a deteach mode, realeasing the console from response of this container:
-		docker run -d 
+	$ docker ps --help	
+	$ docker ps # Show all the container in execution
+	$ docker ps -a # Show all the container either execution or not
 	
-	# Remove the container when always it's stoped.
-		docker run --rm [container id] 
+	$ docker stop [container id]  # Stop a container
 	
-	# Tag a name to a container.
-		docker run --name [name_of_my_choise]
-		
-# Copy things from local folder to the container:
-	docker cp [local_folder_name]/. [container id or name]:/[container_folder_name]
-	docker cp java/. container1:/java
-	docker cp java/classe.java container1:/java
+	$ docker attach [container id] # Attach the console to a container up, so the console waits for responses to this container
 	
-	# Copy things from container to local folder:	
-		docker cp [container id or name]:/[container_folder_name] [local_folder_name]
-		docker cp container1:/java java
-
+	$ docker logs [container id] # Attach the logs to a container up
+	$ docker logs -f [container id] # With the parameter "-f" the console stays waiting for logs response.
 	
-# Stop a container
-	docker stop [container id]
-
-
-# Attach the console to a container up, so the console waits for responses to this container:
-	docker attach [container id]
-
-
-# Attach the logs to a container up:
-	docker logs [container id]
-	docker logs -f [container id] # With the parameter "-f" the console stays waiting for logs response.
-
-
-# Start again a container stoped:
-	docker start [container id]
-	docker start -a -i [container id]
+	$ docker start [container id] # Start again a container stoped
+	$ docker start -a -i [container id]
 	
+	$ docker rm [container id or name] # Removing containers
+	$ docker rm container1 container2 container3
+	$ docker rm [container id or name] -f
+	
+	$ docker run -p 8080:80 [image]  # Start a container based on an image	with Local port 8080 and container por 80.
+	$ docker run -it ubuntu /bin/bash
+	$ docker run -d # Start a container in a deteach mode, realeasing the console from response of this container.	
+	$ docker run --rm [container id]  # Remove the container when always it's stoped.
+	$ docker run --name [name_of_my_choise] # Tag a name to a container.
+	
+	$ docker exec -it [image name or image id] bash # Execute a command inside a runing container.
+	$ docker run -it -d node # Runing a container in interactive mode and in detached
+	$ docker exec [container id] npm install 	
+	# Runing a container with the command "npm init"(when is started) instead of the default command of the node image.
+	$ docker run -it node npm init 
+	
+	$ docker cp [local_folder_name]/. [container id or name]:/[container_folder_name] # Copy things from local folder to the container.
+	$ docker cp java/. container1:/java
+	$ docker cp java/classe.java container1:/java
+	$ docker cp [container id or name]:/[container_folder_name] [local_folder_name] # Copy things from container to local folder.
+	$ docker cp container1:/java java			
 
 ------------------------------------------------------------
-# Removing containers:
-	docker rm [container id or name]
-	docker rm container1 container2 container3
-	docker rm [container id or name] -f
-	
-------------------------------------------------------------
-docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=Backoffice -e MYSQL_USER=hugo -e MYSQL_PASSWORD=hugo backoffice-db
-docker exec -it [container_id] bash root@[container_id]:/# mysql -uroot -p
-------------------------------------------------------------
-# Docker Volume:
-
-docker volume --help
-docker volume ls
-
-
-
+$ docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=Backoffice -e MYSQL_USER=hugo -e MYSQL_PASSWORD=hugo backoffice-db
+$ docker exec -it [container_id] bash root@[container_id]:/# mysql -uroot -p
 ------------------------------------------------------------

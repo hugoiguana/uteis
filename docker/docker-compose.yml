@@ -1,0 +1,60 @@
+# https://docs.docker.com/compose/compose-file/
+
+# The name of the "docker-compose" can sufix with ".yml" or "yaml";
+
+version: "3.8"
+services: 
+    mongodb:
+        image: 'mongo'
+        container-name: mongodb
+        volumes: 
+            - data:/data/db 
+        environment: 
+            # You can define like this:
+            MONGO_INITDB_ROOT_USERNAME: iguana_user
+            MONGO_INITDB_ROOT_PASSWORD: 123456
+         # Or you can use like below:
+         # - MONGO_INITDB_ROOT_USERNAME=iguana_user
+         # - MONGO_INITDB_ROOT_PASSWORD=123456
+      # Or you can import a environment configuration file:
+      # env_files: 
+      #    - ./env/mongo.env
+            networks: 
+                - mynetwork
+    backend:
+        build: ./backend
+        # Or you can use the complete sintaxe below:
+        # build: 
+        #     context: ./backend
+        #     docker-file: Dockerfile
+        #     args: 
+        #         some-arg: value1
+        ports: 
+            - '80:80'         
+        volumes:
+            - logs:/app/logs
+            - ./backend/nodeapp:/app
+            - /app/node_modules
+        env_files: 
+               - ./env/node.env
+        depends_on:  # The "backend" service will be created after the "mongodb" server is up and runing.
+            - mongodb                     
+            
+    frontend:
+        build: ./frontend
+        ports: 
+            - '3000:3000'         
+        volumes:
+            - ./frontend/src:/app/src
+            - /app/node_modules
+         stdin_open: true
+         tty: true
+        depends_on: 
+            - backend   
+
+volumes:
+    data:
+    logs: 
+    
+        
+    
