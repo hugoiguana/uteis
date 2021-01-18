@@ -28,8 +28,10 @@ $ nano .bashrc
 alias c=clear
 
 # Git
+alias c='clear'
 alias ga='git add'
 alias gd='git diff'
+alias gb='git branch'
 alias gpu='git pull'
 alias gp='git push'
 alias gst='git status'

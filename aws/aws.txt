@@ -1,0 +1,49 @@
+
+
+# Install AWS CLI:
+	$ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip" -o "awscliv2.zip"
+	$ unzip awscliv2.zip
+	$ sudo ./aws/install
+		https://docs.aws.amazon.com/pt_br/cli/latest/userguide/install-cliv2-linux.html
+
+
+# CLI commands:
+				
+		$ aws configure
+			https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
+			This command will create the files "~/.aws/credentials" and "~/.aws/config".
+			
+			
+# AWS products:
+	API Gateway
+	EC2(Virtual Server in the Cloud)
+	ECS(Elastic Container Service)
+	AWS Load Balancer
+	EFS(Elastic File System)
+	IAM(Manage User access and Encryption keys)
+	CloudWatch
+	S3
+	SQS
+	Lambda
+	DynamoDB
+	RDS
+	Cognito 
+	
+	
+# SAM cli:
+	sam local invoke --help
+	sam local invoke -t ./templates/samTemplate.yaml -e ./test/mocks/events/getTermById-mock-test.json TermsOfServiceGetTermById
+	
+	sam local start-api
+	sam local start-api --env-vars env.json
+	
+	
+	sam validate -t ./templates/samTemplate.yaml	
+	sam build --use-container -t ./templates/samTemplate.yaml	
+			
+		
+		
+		
+		
+		
+	

@@ -1,0 +1,26 @@
+
+# Install:
+	https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install-linux.html
+
+# Commands:	
+	$ sam --version
+	
+	
+	$ sam local invoke -t ./templates/samTemplate.yaml -e ./test/mocks/terms-of-service/terms-of-service-accept-request.json HolderAccountTermsOfServiceAccept
+
+
+sudo /home/linuxbrew/.linuxbrew/bin/sam local invoke -t ./templates/samTemplate.yaml -e ./test/mocks/terms-of-service/terms-of-service-accept-request.json HolderAccountTermsOfServiceAccept
+
+
+aws configure sso
+
+
+
+export AWS_ACCESS_KEY_ID="ASIA6AC43YYG4RQX22OI"
+export AWS_SECRET_ACCESS_KEY="zQqJKqh0sqjzXGAkVTEw5FtYQ0+rU1GlVv8ertoS"
+export AWS_SESSION_TOKEN="IQoJb3JpZ2luX2VjEDUaCXVzLWVhc3QtMSJHMEUCIF0AqPIW96s6c6AvCVybmpBAkeoz38I+v7ObyRI2vYjmAiEA0jnu6rlWaOYNeLSoW5w7uzgr/9DDf3wOslpA1mIhqu8qoQMIvf//////////ARABGgw5NjIyNjc0MzI0NjEiDCpeAPlJGks+kAxM9ir1Agv06fmnlwq0wOBop7ze3hqFYEX63aUR+o2xJe34BZWBHLuDB9bGNI1n1gfHojH8Ovs+1HJiKK94IetihgJIEDxD8p9afWcsABfbExwuE9Uz4ZlY/0l4k3H2c1lb1FQMUauaT4ImZFMI709KV+YprnGJQa4/APVL5v2fG+V8pBulRJN5tpFTbZM0kYSuVlnx2+doV67Zs/nbDfhgwma4T1fp0KPHVO1MOW73m/NMcvPjfyX/jWNxnGFISc+xRoPOBGDVN5c/vuHcLbjbp+MNT7+WMeikGsD7dw9I5tLPydcX54TYph+YDOA/QD059zE8zUfOlHQ+1/CZZSoaZFToOJt9c7lWEfZCGfFZ5SSx6DiG45GHiHHj0Yr06AZNl0gDvEBktwr7fWGHIZQbiFZv9h5YmC5OJPKi2/anBzJ/rhgLglHcXvIvVicmrkoW5qRhtwBGlQNHSuVxKtFKSwlx3LP2nF8tke1144LPWK3J50uEqmhunNEwxamj/gU6pgHj8doy+WUSRNNgCkmKBr+3zR5IWvUU/R5/iW/DHjofhsDsXXOXMsnoQFMQYIULxXM4UaVpUBf6z3/d33p6IIy11O9mZ1PhWDsqetVGp14H/6GbxvTCF3Zzq8zV6rZIz0vEJi7CXfJgjN3Zbg8Hm1IxzP5Ice1QCptq4y+JDIYblRj59No+IWguxhZ3HEdkcZxK+6yJsttja+/W3mq9GyBxW3DgIbS0"
+
+echo $AWS_ACCESS_KEY_ID
+echo $AWS_SECRET_ACCESS_KEY
+echo $AWS_SESSION_TOKEN
+

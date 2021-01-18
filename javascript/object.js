@@ -6,6 +6,14 @@
 
 let person = {};
 
+if (!person) {
+    console.log("TESTE1");
+} else if (person != null) {
+    console.log("TESTE2");
+} else {
+    console.log("TESTE3");
+}
+
 console.log(typeof person); //object
 
 // # Setting properties:
