@@ -26,7 +26,7 @@ services:
         # Or you can use the complete sintaxe below:
         # build: 
         #     context: ./backend
-        #     docker-file: Dockerfile
+        #     dockerfile: Dockerfile
         #     args: 
         #         some-arg: value1
         ports: 
