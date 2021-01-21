@@ -35,7 +35,7 @@ services:
             - logs:/app/logs
             - ./backend/nodeapp:/app
             - /app/node_modules
-        env_files: 
+        env_file: 
                - ./env/node.env
         depends_on:  # The "backend" service will be created after the "mongodb" server is up and runing.
             - mongodb                     
