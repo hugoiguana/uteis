@@ -14,6 +14,9 @@
 [less /etc/passwd]
 [less /etc/passwd | grep aline]
 
+# Exibe grupos ao qual o usuário logado faz parte:
+ $ id -nG
+
 # Lista grupos:
 [less /etc/group | grep grupo_a]
 
