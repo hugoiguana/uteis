@@ -1,0 +1,39 @@
+
+https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
+
+
+# Concepts:
+
+	# Pod(Container):
+		- Is the smallest unit of the kubernets world;
+		- Runs a cointeiner;
+		
+	# Proxy/Config
+	
+	# Worker Node:
+		- Worler Nodes Run the containers of yours application;
+		- "Nodes" ara your machines/ virtual instances;
+		- Can have more than one pod;
+		
+	# Master Node:
+		- The control Plane;
+		- Control your deployment;
+		
+	# Cluster
+		
+				
+				
+		 ----------------------Cluster --------------------------------
+		|                                                              |
+		|    -----------         -------Worker node -------            |
+		|   |			|		|	 --------------        |           |
+		|	|Master Node|-------|	| Proxy/Config |       |           |
+		|	|			|		|	 --------------        |           |
+		|	 -----------	    |	 -----------------     |           |
+		|						|	| Pode(Container) |    |           |
+		|						|	 -----------------	   |           |
+		|						 --------------------------            |
+		|                                                              |
+		|                                                              |
+		|                                                              |
+		 --------------------------------------------------------------
