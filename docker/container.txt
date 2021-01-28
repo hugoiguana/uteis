@@ -26,6 +26,9 @@
 	$ docker run -d # Start a container in a deteach mode, realeasing the console from response of this container.	
 	$ docker run --rm [container id]  # Remove the container when always it's stoped.
 	$ docker run --name [name_of_my_choise] # Tag a name to a container.
+	$ docker run -v /app/data [image]  # Creates a anonymous Volume
+	$ docker run -v data:/app/data [image] # Creates a named Volume
+	$ docker run -v /path/to/code:/app/data [image] # Creates a bind mount
 	
 	$ docker exec -it [image name or image id] bash # Execute a command inside a runing container.
 	$ docker run -it -d node # Runing a container in interactive mode and in detached

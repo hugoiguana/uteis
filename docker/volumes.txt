@@ -34,20 +34,20 @@
 	
 	
 	# "Bind Mount":
-	# Location on host file system, not tied to any specific container;
-	# Survives container shutdown/restart - removal on host fs;
-	# Can be shared across containers;
-	# Can be re-used for same container(Across restarts);
-	# This is ideal when you want to pin your project folder(located at your local host) to the container folder.
-	# So, on this way you can edit your project's files and this modifications will be reflected on the container without the needs of rebuild the docker image.
-		$ docker run -v full_path_host_folder:/app/docker_folder	
-		$ docker run -v /home/hfm/project/:/app
-		$ docker run -v "/home/hfm/project/:/app"
-		$ docker run -v $(pwd):/app # On Linux
-		$ docker run -v "%cd%":/app # On Windows
-			# it can't be created on the Dockerfile;
-				# You can set this volume Read-lony: So, this way the container can't change any file inside this folder.
-					$ docker run -v /home/hfm/project/:/app:ro
+		# Location on host file system, not tied to any specific container;
+		# Survives container shutdown/restart - removal on host fs;
+		# Can be shared across containers;
+		# Can be re-used for same container(Across restarts);
+		# This is ideal when you want to pin your project folder(located at your local host) to the container folder.
+		# So, on this way you can edit your project's files and this modifications will be reflected on the container without the needs of rebuild the docker image.
+			$ docker run -v full_path_host_folder:/app/docker_folder	
+			$ docker run -v /home/hfm/project/:/app
+			$ docker run -v "/home/hfm/project/:/app"
+			$ docker run -v $(pwd):/app # On Linux
+			$ docker run -v "%cd%":/app # On Windows
+				# it can't be created on the Dockerfile;
+					# You can set this volume Read-lony: So, this way the container can't change any file inside this folder.
+						$ docker run -v /home/hfm/project/:/app:ro
 			
 	
 	

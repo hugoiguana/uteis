@@ -1,0 +1,36 @@
+
+# ARG:
+	- Availabe inside of Dockerile, NOT acessible in CMD or any application code;
+	- Set on image build(docker build) via "--build-arg";
+	----------------------
+	# Inside a Dockerile:
+	FROM node:14
+	WORKDIR /app
+	COPY package.json
+	RUN npm install
+	ARG DEFAULT_PORT=80
+	ENV PORT $DEFAULT_PORT
+	EXPOSE $PORT	
+	CMD ["npm", "start"]
+	----------------------
+	$ docker build --build-arg DEFAULT_PORT=8080 .
+	----------------------
+	
+	
+# ENV:
+	- Availabe inside of Dockerile and in application code;
+	- Set via ENV in Dockerile or via "--env" on "docker run";
+	----------------------
+	# Inside a Dockerile:
+	FROM node:14
+	WORKDIR /app
+	COPY package.json
+	RUN npm install
+	ENV PORT 80
+	EXPOSE $PORT
+	CMD ["npm", "start"]
+	----------------------		
+	$ docker run -p 80:8000 --env PORT=8000 [image]
+	$ docker run -p 80:8000 --e PORT=8000 [image]
+	$ docker run -p 80:8000 --env-file ./.envFile [image]
+	----------------------		
