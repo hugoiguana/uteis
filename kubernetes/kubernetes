@@ -23,17 +23,8 @@ https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
 		
 				
 				
-		 ----------------------Cluster --------------------------------
-		|                                                              |
-		|    -----------         -------Worker node -------            |
-		|   |			|		|	 --------------        |           |
-		|	|Master Node|-------|	| Proxy/Config |       |           |
-		|	|			|		|	 --------------        |           |
-		|	 -----------	    |	 -----------------     |           |
-		|						|	| Pode(Container) |    |           |
-		|						|	 -----------------	   |           |
-		|						 --------------------------            |
-		|                                                              |
-		|                                                              |
-		|                                                              |
-		 --------------------------------------------------------------
+	# Service:
+		Exposes Pods to the Cluster or Externally;
+		Services group Pods with a shared IP;
+		Without services, Pods are very hard to reach and communication is difficult;
+		Reaching a Pod from outside the Cluster is not possible at all without Services;
