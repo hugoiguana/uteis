@@ -16,6 +16,8 @@ $ kubectl rollout undo deployment/[deployment-name]
 $ kubectl rollout undo deployment/[deployment-name] --to-revision=1
 $ kubectl rollout history deployment/[deployment-name]
 $ kubectl rollout history deployment/[deployment-name] --revision=3
+
+# Adjusting Pod's replicas:	
 $ kubectl scale deployment/[deployment-name] --replica=3
 
 
@@ -27,12 +29,19 @@ $ kubectl get services
 $ kubectl delete service [service-name]
 $ kubectl delete deployment [deployment-name]
 
-# Adjusting Pod's replicas:	
 
+# Apply a kubernetes config file
+$ kubectl apply -f=[file_name].yaml
+$ kubectl apply -f=deployment.yaml
+$ kubectl delete deployment -f=deployment.yaml
+$ kubectl delete deployment -f=deployment1.yaml,deployment2.yaml
+$ kubectl delete deployment -f=deployment1.yaml -f=deployment2.yaml
 
-$ kubectl
-$ kubectl
-$ kubectl
+# Delete kubernetes objects with labels that match the "group=example"
+$ kubectl delete -l group=example
+
+# Dele deployments and services with labels that match the "group=example"
+$ kubectl delete deployments, services -l group=example
 $ kubectl
 $ kubectl
 $ kubectl
