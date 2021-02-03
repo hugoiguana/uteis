@@ -26,6 +26,8 @@ $ kubectl expose deployment [service-name]  -- type=ClusterIP --port=8080
 $ kubectl expose deployment [service-name]  -- type=NodePort --port=8080 
 $ kubectl expose deployment [service-name]  -- type=LoadBalancer --port=8080 
 $ kubectl get services
+$ kubectl -n [namespace_name] get services
+$ kubectl -n [namespace_name] get svc
 $ kubectl delete service [service-name]
 $ kubectl delete deployment [deployment-name]
 
@@ -42,11 +44,13 @@ $ kubectl delete -l group=example
 
 # Dele deployments and services with labels that match the "group=example"
 $ kubectl delete deployments, services -l group=example
-$ kubectl
-$ kubectl
-$ kubectl
-$ kubectl
-$ kubectl
+
+
+$ kubectl get nodes
+$ kubectl get ns
+$ kubectl create namespace [namespace_name]
+$ kubectl apply -n [namespace_name] -f=file.yaml
+$ kubectl -n [namespace_name] get pods
 $ kubectl
 $ kubectl
 $ kubectl
