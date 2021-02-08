@@ -166,5 +166,8 @@ history 1
 history 1 | grep git
 
 
+# Host file:
+$ sudo gedit ~/etc/host
+
 
 
