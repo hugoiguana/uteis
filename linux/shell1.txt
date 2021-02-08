@@ -32,6 +32,9 @@
   > Ao final, fecho com a tag 'IGUANA' que escolhi;
   > IGUANA
 
+# Abre um arquivo com o editor de texto padrão:
+$ gedit teste.txt
+
 # Exibe todas as linhas de um arquivo:
   [cat teste.txt] 
 # Exibe todas as linhas dos arquivos terminados em .txt:
