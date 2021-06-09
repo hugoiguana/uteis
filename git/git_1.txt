@@ -59,6 +59,9 @@ git config user.email "hugo.iguanaa@gmail.com"
 git config --global user.name "hugo iguana" (a opção global configura a variável para o computador inteiro.)
 git config --global user.email "hugo.iguanaa@gmail.com"
 
+# Faz com que não precise logar todas as vezes no push.
+git config --global credential.helper 'cache --timeout=86400'
+
 ------------------------------------------------------------------------------------
 
 # ATUALIZANDO BRANCH:
