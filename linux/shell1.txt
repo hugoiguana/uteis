@@ -149,6 +149,7 @@ $ gedit teste.txt
 
 # Outros:
 [uname -m] (Versão do SO. 32 ou 64 bits)
+$ sudo kill -9 $(sudo lsof -t -i:8080) (Mata porta em uso)
 
 
 # Aliases:
