@@ -34,6 +34,11 @@
 
 # Abre um arquivo com o editor de texto padrão:
 $ gedit teste.txt
+$ nano teste.txt
+$ vim teste.txt
+
+# Util para acompanhar arquivos de logs:
+$ tail -f teste.log
 
 # Exibe todas as linhas de um arquivo:
   [cat teste.txt] 
