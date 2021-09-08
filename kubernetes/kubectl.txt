@@ -6,6 +6,19 @@ $ kubectl get pods
 $ kubectl dashboaard
 $ kubectl create 
 
+# Commands most used:
+$ kubectl config get-contexts
+$ kubectl config use-context ${CONTEXT_NAME}
+$ kubectl config set-context ${CONTEXT_NAME}
+$ kubectl get po -n ${NAMESPACE}
+$ kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --follow
+$ kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --tail=20
+$ kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --tail=20 --since=30m
+$ kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --since=30m
+$ kubectl describe po -n ${NAMESPACE}
+$ kubectl exec ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} -- ls
+
+
 # Deployment:
 $ kubectl create deployment [deployment-name] --image=[image-name]
 $ kubectl delete deployment [deployment-name] 
