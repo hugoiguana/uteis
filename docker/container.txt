@@ -35,6 +35,7 @@
 	$ docker exec [container id] npm install 	
 	# Runing a container with the command "npm init"(when is started) instead of the default command of the node image.
 	$ docker run -it node npm init 
+	$ docker exec -i -t b6817698dea4 /bin/bash # Open shell
 	
 	$ docker cp [local_folder_name]/. [container id or name]:/[container_folder_name] # Copy things from local folder to the container.
 	$ docker cp java/. container1:/java
