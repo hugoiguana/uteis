@@ -9,6 +9,12 @@ Exists only a numeric type on javascrip and it have the following characteristic
 
 */ 
 
+# Converting to number.
+Number(x);
+parseInt(x, 10);
+parseFloat(x);
++x;
+
 // Be careful with:
 const x = 0.1 + 0.2;
 console.log(x);
