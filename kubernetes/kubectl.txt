@@ -17,10 +17,12 @@ $ kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --tail=20 --sinc
 $ kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --since=30m
 $ kubectl describe po -n ${NAMESPACE}
 $ kubectl exec ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} -- ls
+$ kubectl exec ${POD_NAME} -it bin/bash
 
 
 # Deployment:
 $ kubectl create deployment [deployment-name] --image=[image-name]
+$ kubectl edit deployment [deployment-name]
 $ kubectl delete deployment [deployment-name] 
 $ kubectl get deployments
 $ kubectl set image deployment/[deployment-name] [container-name-on-kubernetes]/[image-name]
@@ -64,7 +66,7 @@ $ kubectl get ns
 $ kubectl create namespace [namespace_name]
 $ kubectl apply -n [namespace_name] -f=file.yaml
 $ kubectl -n [namespace_name] get pods
-$ kubectl
+$ kubectl get replicaset
 $ kubectl
 $ kubectl
 $ kubectl
