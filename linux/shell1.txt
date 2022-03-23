@@ -130,6 +130,7 @@ $ tail -f teste.log
 
 
 # Compactação TAR/GZ:
+  https://phoenixnap.com/kb/extract-tar-gz-files-linux-command-line
   [tar -cz pasta > pasta_zipada.tag.gz] (Compacta)
   [tar -xz < pasta_zipada.tag.gz] (Descompacta)
   [tar -czf pasta_zipada.tag.gz pasta] (Compacta)
