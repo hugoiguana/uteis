@@ -55,3 +55,14 @@ mvn clean package -DskipTests=true
 mvn clean package
 mvn clean install
 
+mvn help:evaluate -Dexpression=project.name | grep "^[^\[]"
+mvn help:evaluate -Dexpression=project.version | grep "^[^\[]"
+mvn -q -Dexec.executable=echo -Dexec.args='${project.groupId}' --non-recursive exec:exec
+mvn -q -Dexec.executable=echo -Dexec.args='${project.artifactId}' --non-recursive exec:exec
+mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec
+
+PROJECT_GROUP_ID=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.groupId}' --non-recursive exec:exec)
+PROJECT_ARTIFACT_ID=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.artifactId}' --non-recursive exec:exec)
+PROJECT_VERSION=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
+
+
