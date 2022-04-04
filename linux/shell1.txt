@@ -21,6 +21,8 @@ sudo su
 sh arquivo.sh
 ip a
 route -n
+ping (IP)
+
 
 
 # Host file:
