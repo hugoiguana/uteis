@@ -13,6 +13,19 @@
   [cd /home] (Diretório com todos os usuários)
   [man mv] (Exibe opções para o comando)
   
+  
+# Outros:
+uname -m (Versão do SO. 32 ou 64 bits)
+sudo kill -9 $(sudo lsof -t -i:8080) (Mata porta em uso)
+sudo su
+sh arquivo.sh
+ip a
+route -n
+
+
+# Host file:
+$ sudo gedit ~/etc/host  
+  
 ---------------------------Manipulando Arquivos------------------------------
 # Cria um arquivo vazio:
   [touch teste.txt] 
@@ -153,11 +166,6 @@ $ tail -f teste.log
   [killall firefox] (Mata todos os processo com nome firefox, dando uma chance de recuperação ao programa) 
   [killall firefox] (Mata todos os processo com nome firefox, sem chance de recuperação ao programa)
 
-# Outros:
-$ uname -m (Versão do SO. 32 ou 64 bits)
-$ sudo kill -9 $(sudo lsof -t -i:8080) (Mata porta em uso)
-$ sudo su
-$ sh arquivo.sh
 
 
 # Aliases:
@@ -177,9 +185,23 @@ history
 history 1
 history 1 | grep git
 
+# Firewall:
+systemctl status ufw
+sudo ufw status
+ufw enable
+ufw allow ssh
+ufw allow http/tcp
+ufw allow 80
+ufw status numbered
+ufw delete 1
 
-# Host file:
-$ sudo gedit ~/etc/host
+
+
+
+
+
+
+
 
 
 
