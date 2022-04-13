@@ -1,0 +1,4 @@
+https://helm.sh/docs/intro/quickstart/
+
+
+helm repo add bitnami https://charts.bitnami.com/bitnami
