@@ -1,4 +1,45 @@
 https://helm.sh/docs/intro/quickstart/
 
+# Helm CLI:
+
+helm -h
+helm get -h
 
 helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo add brigade https://brigadecore.github.io/charts
+helm repo add dev https://example.com/dev-charts
+helm search hub wordpress
+helm search repo bitnami 
+helm repo update
+
+
+helm show all bitnami/mysql
+helm list
+helm list --all
+helm get values happy-panda
+
+# Install Helm Charts:
+helm install bitnami/mysql --generate-name
+helm install bitnami/mysql my-helm-name
+helm install -f values.yaml bitnami/wordpress --generate-name
+helm install --set name=value bitnami/wordpress --generate-name
+helm install --set name1=b,name2=d bitnami/wordpress --generate-name
+helm install --set name={a, b, c} bitnami/wordpress --generate-name
+helm install --set servers[0].port=80 bitnami/wordpress --generate-name
+helm install --set servers[0].port=80,servers[0].host=example bitnami/wordpress --generate-name
+helm uninstall mysql-1612624192
+helm status mysql-1612624192
+helm show values bitnami/wordpress
+helm upgrade -f panda.yaml happy-panda bitnami/wordpress
+helm rollback happy-panda 1
+
+
+# Create Heml Charts:
+helm create deis-workflow
+helm package deis-workflow
+helm install deis-workflow ./deis-workflow-0.1.0.tgz
+
+
+
+
+
