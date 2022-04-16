@@ -1,5 +1,5 @@
-kind create cluster --config kind-config.yml --name mdoc-devops-cluster
-kind delete cluster --name mdoc-devops-cluster
+kind create cluster --config kind-config.yml --name devops-cluster
+kind delete cluster --name devops-cluster
 kind get clusters
 kind get nodes
 kubectl get nodes
