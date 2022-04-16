@@ -21,6 +21,7 @@ helm get values happy-panda
 # Install Helm Charts:
 helm install bitnami/mysql --generate-name
 helm install bitnami/mysql my-helm-name
+helm install -f values.yaml --dry-run 
 helm install -f values.yaml bitnami/wordpress --generate-name
 helm install --set name=value bitnami/wordpress --generate-name
 helm install --set name1=b,name2=d bitnami/wordpress --generate-name
