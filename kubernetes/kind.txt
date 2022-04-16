@@ -1,0 +1,7 @@
+kind create cluster --config kind-config.yml --name mdoc-devops-cluster
+kind delete cluster --name mdoc-devops-cluster
+kind get clusters
+kind get nodes
+kubectl get nodes
+docker ps | grep kind
+cat ~/.kube/conf
