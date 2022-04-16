@@ -1,0 +1,30 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: devops-test
+nodes:
+  - role: control-plane
+    kubeadmConfigPatches:
+    - |
+      kind: InitConfiguration
+      nodeRegistration:
+        kubeletExtraArgs:
+          node-labels: "ingress-ready=true"
+    extraPortMappings:
+    - containerPort: 8080
+      hostPort: 80
+      protocol: TCP
+    - containerPort: 443
+      hostPort: 443
+      protocol: TCP
+    # This option mounts the host docker registry folder into
+    # the control-plane node, allowing containerd to access them. 
+    extraMounts:
+      - containerPath: /etc/docker/certs.d/80.158.29.175
+        hostPath: /Users/hugoiguana/Devops/kubernetes/kind/certs     
+  - role: worker
+  #- role: worker
+containerdConfigPatches:
+  - |-
+    [plugins."io.containerd.grpc.v1.cri".registry.configs."80.158.29.175".tls]
+      cert_file = "/etc/docker/certs.d/80.158.29.175/nexuscert.crt"
+      key_file  = "/etc/docker/certs.d/80.158.29.175/nexuskey.pem"  
