@@ -22,6 +22,7 @@ sh arquivo.sh
 ip a
 route -n
 ping (IP)
+cat /etc/os-release (Verificar distribuição do linux)
 
 
 
