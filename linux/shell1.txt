@@ -19,7 +19,6 @@ uname -m (Versão do SO. 32 ou 64 bits)
 sudo kill -9 $(sudo lsof -t -i:8080) (Mata porta em uso)
 sudo su
 sh arquivo.sh
-ip a
 route -n
 ping (IP)
 cat /etc/os-release (Verificar distribuição do linux)
@@ -199,8 +198,17 @@ ufw status numbered
 ufw delete 1
 
 
+# IP:
+ifconfig
+ip a
+ip addr show
+ip addr add 192.168.1.10/24 dev eth0
 
 
+# SSH:
+service sshd status
+service sshd start
+ssh root@192.168.10.1 -p 22
 
 
 
