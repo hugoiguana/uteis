@@ -23,6 +23,10 @@ route -n
 ping (IP)
 cat /etc/os-release (Verificar distribuição do linux)
 
+# Informações de Hardware:
+sudo lshw -short
+sudo lshw
+
 
 
 # Host file:
