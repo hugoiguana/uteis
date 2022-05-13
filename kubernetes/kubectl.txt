@@ -6,6 +6,10 @@ $ kubectl get pods
 $ kubectl dashboaard
 $ kubectl create 
 
+
+kubectl get nodes
+kubectl cluster-info
+
 # Commands most used:
 $ kubectl config get-contexts
 $ kubectl config use-context ${CONTEXT_NAME}
