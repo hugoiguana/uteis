@@ -22,6 +22,9 @@ sh arquivo.sh
 route -n
 ping (IP)
 cat /etc/os-release (Verificar distribuição do linux)
+uname -m
+arch
+
 
 # Informações de Hardware:
 sudo lshw -short
