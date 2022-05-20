@@ -24,6 +24,7 @@ ping (IP)
 cat /etc/os-release (Verificar distribuição do linux)
 uname -m
 arch
+df -h (Exibe partições e espaços em disco)
 
 
 # Informações de Hardware:
