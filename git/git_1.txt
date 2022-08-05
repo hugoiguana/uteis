@@ -43,7 +43,9 @@ git init
 git add .
 git commit -m "first commit"
 git remote
+git remote -v
 git remote add nome_do_remote https://github.com/hugoiguana/game1.git
+git remote set-url origin https://github.com/hugoiguana/game1.git
 git push --set-upstream origin master
 git remote remove nome_do_remote
 
