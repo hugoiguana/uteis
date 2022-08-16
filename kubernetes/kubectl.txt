@@ -76,4 +76,6 @@ $ kubectl
 $ kubectl
 $ kubectl
 
-
+# Pods:
+kubectl delete pod POD_NAME -n NAMPESPACE 
+kubectl delete pod POD_NAME -n NAMPESPACE --force
