@@ -1,0 +1,9 @@
+
+# Filters on Query:
+
+metric_test_total{statusCode="200"}
+metric_test_total{statusCode!="200"}
+metric_test_total{job="microservice-test", statusCode="200"}
+metric_test_total{statusCode=~"200|400|500"}
+metric_test_total{statusCode=~"2.."}
+
