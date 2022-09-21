@@ -1,0 +1,7 @@
+brew tap hashicorp/tap
+brew install hashicorp/tap/vault
+
+vault auth list
+
+export VAULT_ADDR="VAULT_URI"
+vault login -method=oidc -path=keycloak role=admin
