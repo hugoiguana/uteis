@@ -1,0 +1,8 @@
+brew install tfenv
+tfenv list-remote
+tfenv install 1.2.5
+tfenv use 1.1.7
+
+
+terraform init
+ 
