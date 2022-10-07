@@ -1,3 +1,9 @@
+
+
+# Install Kind:
+https://kind.sigs.k8s.io/docs/user/quick-start/
+
+# Create a cluster:
 kind create cluster --config kind-config.yml --name devops-cluster
 kind delete cluster --name devops-cluster
 kind get clusters
