@@ -15,8 +15,6 @@ EX:
 
 ------------------------------------------------------------------------------------------
 
-
-
 $ kubectl help
 
 $ kubectl get pods
@@ -24,74 +22,79 @@ $ kubectl dashboaard
 $ kubectl create 
 
 
+# Memory/CPU metrics
+kubectl top nodes
+kubectl top pods -n NAMESPACE_NAME
+
 kubectl get nodes
 kubectl cluster-info
 
 # Commands most used:
-$ kubectl config get-contexts
-$ kubectl config use-context ${CONTEXT_NAME}
-$ kubectl config set-context ${CONTEXT_NAME}
-$ kubectl get po -n ${NAMESPACE}
-$ kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --follow
-$ kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --tail=20
-$ kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --tail=20 --since=30m
-$ kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --since=30m
-$ kubectl describe po -n ${NAMESPACE}
-$ kubectl exec ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} -- ls
-$ kubectl exec ${POD_NAME} -it bin/bash
+kubectl config get-contexts
+kubectl config use-context ${CONTEXT_NAME}
+kubectl config set-context ${CONTEXT_NAME}
+kubectl get namespaces
+kubectl get po -n ${NAMESPACE}
+kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --follow
+kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --tail=20
+kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --tail=20 --since=30m
+kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --since=30m
+kubectl describe po -n ${NAMESPACE}
+kubectl exec ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} -- ls
+kubectl exec ${POD_NAME} -it bin/bash
 
 
 # Deployment:
-$ kubectl create deployment [deployment-name] --image=[image-name]
-$ kubectl edit deployment [deployment-name]
-$ kubectl delete deployment [deployment-name] 
-$ kubectl get deployments
-$ kubectl set image deployment/[deployment-name] [container-name-on-kubernetes]/[image-name]
-$ kubectl rollout status deployment/[deployment-name]
-$ kubectl rollout undo deployment/[deployment-name]
-$ kubectl rollout undo deployment/[deployment-name] --to-revision=1
-$ kubectl rollout history deployment/[deployment-name]
-$ kubectl rollout history deployment/[deployment-name] --revision=3
+kubectl create deployment [deployment-name] --image=[image-name]
+kubectl edit deployment [deployment-name]
+kubectl delete deployment [deployment-name] 
+kubectl get deployments
+kubectl set image deployment/[deployment-name] [container-name-on-kubernetes]/[image-name]
+kubectl rollout status deployment/[deployment-name]
+kubectl rollout undo deployment/[deployment-name]
+kubectl rollout undo deployment/[deployment-name] --to-revision=1
+kubectl rollout history deployment/[deployment-name]
+kubectl rollout history deployment/[deployment-name] --revision=3
 
 # Adjusting Pod's replicas:	
-$ kubectl scale deployment/[deployment-name] --replica=3
+kubectl scale deployment/[deployment-name] --replica=3
 
 
 # Service:
-$ kubectl expose deployment [service-name]  -- type=ClusterIP --port=8080 
-$ kubectl expose deployment [service-name]  -- type=NodePort --port=8080 
-$ kubectl expose deployment [service-name]  -- type=LoadBalancer --port=8080 
-$ kubectl get services
-$ kubectl -n [namespace_name] get services
-$ kubectl -n [namespace_name] get svc
-$ kubectl delete service [service-name]
-$ kubectl delete deployment [deployment-name]
+kubectl expose deployment [service-name]  -- type=ClusterIP --port=8080 
+kubectl expose deployment [service-name]  -- type=NodePort --port=8080 
+kubectl expose deployment [service-name]  -- type=LoadBalancer --port=8080 
+kubectl get services
+kubectl -n [namespace_name] get services
+kubectl -n [namespace_name] get svc
+kubectl delete service [service-name]
+kubectl delete deployment [deployment-name]
 
 
 # Apply a kubernetes config file
-$ kubectl apply -f=[file_name].yaml
-$ kubectl apply -f=deployment.yaml
-$ kubectl delete deployment -f=deployment.yaml
-$ kubectl delete deployment -f=deployment1.yaml,deployment2.yaml
-$ kubectl delete deployment -f=deployment1.yaml -f=deployment2.yaml
+kubectl apply -f=[file_name].yaml
+kubectl apply -f=deployment.yaml
+kubectl delete deployment -f=deployment.yaml
+kubectl delete deployment -f=deployment1.yaml,deployment2.yaml
+kubectl delete deployment -f=deployment1.yaml -f=deployment2.yaml
 
 # Delete kubernetes objects with labels that match the "group=example"
-$ kubectl delete -l group=example
+kubectl delete -l group=example
 
 # Dele deployments and services with labels that match the "group=example"
-$ kubectl delete deployments, services -l group=example
+kubectl delete deployments, services -l group=example
 
 
-$ kubectl get nodes
-$ kubectl get ns
-$ kubectl create namespace [namespace_name]
-$ kubectl apply -n [namespace_name] -f=file.yaml
-$ kubectl -n [namespace_name] get pods
-$ kubectl get replicaset
-$ kubectl
-$ kubectl
-$ kubectl
-$ kubectl
+kubectl get nodes
+kubectl get ns
+kubectl create namespace [namespace_name]
+kubectl apply -n [namespace_name] -f=file.yaml
+kubectl -n [namespace_name] get pods
+kubectl get replicaset
+kubectl
+kubectl
+kubectl
+kubectl
 
 # Pods:
 kubectl delete pod POD_NAME -n NAMPESPACE 
