@@ -1,4 +1,21 @@
 
+# Configure various context:
+If you’re using kubectl, here’s the preference that takes effect while determining which kubeconfig file is used.
+1. Use --kubeconfig flag in "kubectl" commands;
+EX:
+  kubectl describe pod POD_NAME -n NAMESPACE_NAME --kubeconfig ~/.kube/configfile.json
+
+2. Use KUBECONFIG environment variable, if specified;
+EX:
+  export KUBECONFIG="~/.kube/configfile.json"
+3. Use $HOME/.kube/config file:
+  Create a config file like "https://github.com/hugoiguana/uteis/blob/master/kubernetes/kube-config-clusters.json" or by the command line explain in "https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/".
+  
+  
+
+------------------------------------------------------------------------------------------
+
+
 
 $ kubectl help
 
