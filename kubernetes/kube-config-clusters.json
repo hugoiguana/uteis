@@ -1,0 +1,54 @@
+{
+    "kind": "Config",
+    "apiVersion": "v1",
+    "preferences": {},
+    "clusters": [
+        {
+            "name": "cluster-dev",
+            "cluster": {
+                "server": "https://...:5443",
+                "insecure-skip-tls-verify": true
+            }
+        },
+        {
+            "name": "cluster-qa",
+            "cluster": {
+                "server": "https://...:5443",
+                "insecure-skip-tls-verify": true
+            }
+        } 
+    ],
+    "users": [
+        {
+            "name": "cluster-dev",
+            "user": {
+                "client-certificate-data": "LS0tL...",
+                "client-key-data": "LS0tL..."
+            }
+        },
+        {
+            "name": "cluster-qa",
+            "user": {
+                "client-certificate-data": "LS0tL...",
+                "client-key-data": "LS0tL..."
+            }
+        }        
+    ],
+    "contexts": [
+        {
+            "name": "cluster-dev",
+            "context": {
+                "cluster": "cluster-dev",
+                "user": "cluster-dev"
+            }
+        },
+        {
+            "name": "cluster-qa",
+            "context": {
+                "cluster": "cluster-qa",
+                "user": "cluster-qa"
+            }
+        }      
+    ],
+    "current-context": "cluster-dev"
+}
