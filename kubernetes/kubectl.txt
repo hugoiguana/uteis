@@ -99,3 +99,11 @@ kubectl
 # Pods:
 kubectl delete pod POD_NAME -n NAMPESPACE 
 kubectl delete pod POD_NAME -n NAMPESPACE --force
+
+# Forward a local port to a port on the Pod
+kubectl port-forward mongo-75f59d57f4-4nd6q 28015:27017
+kubectl port-forward pods/mongo-75f59d57f4-4nd6q 28015:27017
+kubectl port-forward deployment/mongo 28015:27017
+kubectl port-forward replicaset/mongo-75f59d57f4 28015:27017
+kubectl port-forward service/mongo 28015:27017
+
