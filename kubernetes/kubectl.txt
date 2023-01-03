@@ -107,3 +107,11 @@ kubectl port-forward deployment/mongo 28015:27017
 kubectl port-forward replicaset/mongo-75f59d57f4 28015:27017
 kubectl port-forward service/mongo 28015:27017
 
+# Volumes:
+kubectl get pvc -n NAME_SPACE
+kubectl describe pvc -n NAME_SPACE PVC_NAME
+kubectl get sc
+kubectl describe storageClass STORAGE_CLASS_NAME
+kubectl describe sc STORAGE_CLASS_NAME
+kubectl get pv -n NAME_SPACE
+kubectl get pv -n NAME_SPACE
