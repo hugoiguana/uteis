@@ -115,3 +115,12 @@ kubectl describe storageClass STORAGE_CLASS_NAME
 kubectl describe sc STORAGE_CLASS_NAME
 kubectl get pv -n NAME_SPACE
 kubectl get pv -n NAME_SPACE
+
+
+# Secret
+https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/
+kubectl get secrets -n NAMESPACE_NAME
+kubectl get secrets -n NAMESPACE_NAME | grep rabitmq
+describe secret -n NAMESPACE_NAME rabitmq
+kubectl get secret -n NAMESPACE_NAME rabitmq -o jsonpath='{.data}'
+echo 'ektKNzU5UUMkKlMmQjMyQ0x5eXY0IU1A' | base64 --decode
