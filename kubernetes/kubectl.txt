@@ -50,7 +50,9 @@ kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --tail=20 --since=
 kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --since=30m
 kubectl describe po -n ${NAMESPACE}
 kubectl exec ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} -- ls
-kubectl exec ${POD_NAME} -it bin/bash
+kubectl exec ${POD_NAME} -n ${NAMESPACE} -it bin/bash
+kubectl exec ${POD_NAME} -n ${NAMESPACE} --stdin --tty sh
+kubectl exec ${POD_NAME} -n ${NAMESPACE} --stdin --tty bash
 
 
 # Deployment:
