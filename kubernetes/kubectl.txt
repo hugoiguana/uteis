@@ -17,7 +17,11 @@ EX:
 
 $ kubectl help
 
-$ kubectl get pods
+kubectl get pods
+kubectl get pods -n NAMESPACE_NAME
+kubectl get pods -n NAMESPACE_NAME | grep nginx
+kubectl get pods --watch
+
 $ kubectl dashboaard
 $ kubectl create 
 
