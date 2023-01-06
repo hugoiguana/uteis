@@ -59,6 +59,10 @@ kubectl exec ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} -- ls
 kubectl exec ${POD_NAME} -n ${NAMESPACE} -it bin/bash
 kubectl exec ${POD_NAME} -n ${NAMESPACE} --stdin --tty sh
 kubectl exec ${POD_NAME} -n ${NAMESPACE} --stdin --tty bash
+kubectl exec POD_NAME -- cat /aaaaa/some-file.txt
+kubectl exec $(kubectl get pod -l app=POD_NAME -o jsonpath="{.items[0].metadata.name}") -- cat /aaaaa/some-file.txt
+kubectl exec $(kubectl get pod -l app=POD_NAME -o jsonpath="{.items[0].metadata.name}") -c CONTAINER_NAME -- cat /aaaaa/some-file.txt
+
 
 
 # Deployment:
