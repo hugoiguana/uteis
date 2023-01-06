@@ -22,6 +22,10 @@ kubectl get pods -n NAMESPACE_NAME
 kubectl get pods -n NAMESPACE_NAME | grep nginx
 kubectl get pods --watch
 
+# Get the id of the first Pod:
+kubectl get pod -n NAMESPACE_NAME -l app=POD_NAME -o jsonpath="{.items[1].metadata.name}"
+
+
 $ kubectl dashboaard
 $ kubectl create 
 
@@ -48,6 +52,8 @@ kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --follow
 kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --tail=20
 kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --tail=20 --since=30m
 kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --since=30m
+kubectl logs -n NAMESPACE_NAME $(kubectl get pod -n NAMESPACE_NAME -l app=POD_NAME -o jsonpath="{.items[1].metadata.name}")
+
 kubectl describe po -n ${NAMESPACE}
 kubectl exec ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} -- ls
 kubectl exec ${POD_NAME} -n ${NAMESPACE} -it bin/bash
