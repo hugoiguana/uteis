@@ -21,6 +21,7 @@ kubectl get pods
 kubectl get pods -n NAMESPACE_NAME
 kubectl get pods -n NAMESPACE_NAME | grep nginx
 kubectl get pods --watch
+kubectl get pods -n mdoc -o wide
 
 # Get the id of the first Pod:
 kubectl get pod -n NAMESPACE_NAME -l app=POD_NAME -o jsonpath="{.items[1].metadata.name}"
