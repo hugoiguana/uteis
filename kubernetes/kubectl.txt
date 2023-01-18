@@ -146,3 +146,11 @@ kubectl get secrets -n NAMESPACE_NAME | grep rabitmq
 describe secret -n NAMESPACE_NAME rabitmq
 kubectl get secret -n NAMESPACE_NAME rabitmq -o jsonpath='{.data}'
 echo 'ektKNzU5UUMkKlMmQjMyQ0x5eXY0IU1A' | base64 --decode
+
+
+# Log files on kubernetes Nodes:
+kubectl get nodes
+https://github.com/kvaps/kubectl-node-shell
+kubectl node-shell 172.1....
+ls /var/lib/docker/containers
+ls /var/log/pods/<namespace>_<pod_name>_<pod_id>/<container_name>/.
