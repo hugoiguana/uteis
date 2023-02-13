@@ -114,8 +114,8 @@ kubectl create namespace [namespace_name]
 kubectl apply -n [namespace_name] -f=file.yaml
 kubectl -n [namespace_name] get pods
 kubectl get replicaset
-kubectl
-kubectl
+kubectl rollout history deploy/DEPLOY-NAME -n NAMPESPACE
+kubectl rollout undo deploy/DEPLOY-NAME -n NAMPESPACE --to-revision=1
 kubectl
 kubectl
 
