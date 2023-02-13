@@ -41,6 +41,7 @@ kubectl cluster-info
 # Connect on a node of a cluster:
 https://github.com/kvaps/kubectl-node-shell
 kubectl node-shell <node>
+kubectl debug node/mynode -it --image=ubuntu
 
 
 # Commands most used:
