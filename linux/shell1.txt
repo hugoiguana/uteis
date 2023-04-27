@@ -220,11 +220,19 @@ ip addr add 192.168.1.10/24 dev eth0
 # SSH:
 service sshd status
 service sshd start
-ssh root@192.168.10.1 -p 22
+ssh root@IP_REMOTE_MACHINE -p 22
+ssh ubuntu@IP_REMOTE_MACHINE -p 22 -i ~/.ssh/id_rsa
+scp /LOCAL_PATH/file.txt ubuntu@IP-REMOTE_MACHINE:/home/ubuntu/
+scp -r /LOCAL_PATH/ ubuntu@IP_REMOTE_MACHINE:/home/ubuntu/
+scp -r ubuntu@IP_REMOTE_MACHINE:/home/ubuntu/ /LOCAL_PATH/
 
-
-
-
+# Create a key pem and config it on a remote machine to access via SSH:
+ssh-keygen -b 4096 -C "hugo.iguanaa@gmail.com"
+scp ~/.ssh/id_rsa.pub ubuntu@IP_REMOTE_MACHINE:/home/ubuntu/
+ssh ubuntu@IP_REMOTE_MACHINE -p 22 -i ~/.ssh/id_rsa
+cat /home/ubuntu/id_rsa.pub >> ~/.ssh/authorized_key
+exit
+ssh ubuntu@IP_REMOTE_MACHINE -p 22 -i ~/.ssh/id_rsa
 
 
 
