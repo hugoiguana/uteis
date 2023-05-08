@@ -1,0 +1,29 @@
+
+psql --version
+
+# Enter on postgres DB:
+psql wcfinder --host IP_HOST -U DB_USERNAME -d DB_NAME -p 5432
+
+# Execute a file:
+psql wcfinder --host IP_HOST -U DB_USERNAME -d DB_NAME -p 5432 -a -f FILE_PATH
+
+#########################################################################################################
+
+# Exec with Kubernetes
+DBSQL_HOST=""
+DBSQL_PORT="5432"
+DBSQL_DATABASE=""
+DBSQL_USER=""
+DBSQL_PASSWORD=""
+
+# Enter on postgres DB:
+kubectl run dbsql --rm --tty -i --restart='Never' --namespace default --image docker.io/bitnami/postgresql:11.7.0-debian-10-r9 --env="PGPASSWORD=$DBSQL_PASSWORD" --command -- psql $DBSQL_DATABASE --host $DBSQL_HOST -U $DBSQL_USER -d $DBSQL_DATABASE -p $DBSQL_PORT
+
+# Execute a file:
+kubectl run dbsql --rm --tty -i --restart='Never' --namespace default --image docker.io/bitnami/postgresql:11.7.0-debian-10-r9 --env="PGPASSWORD=$DBSQL_PASSWORD" --command -- psql $DBSQL_DATABASE --host $DBSQL_HOST -U $DBSQL_USER -d $DBSQL_DATABASE -p $DBSQL_PORT -a -f FILE_PATH
+
+kubectl get po | grep dbsql
+kubectl exec -n default dbsql --stdin --tty bash
+kubectl logs dbsql -f
+
+#########################################################################################################
