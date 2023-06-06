@@ -2,7 +2,22 @@ Install PSQL:
 https://www.timescale.com/blog/how-to-install-psql-on-mac-ubuntu-debian-windows/
 
 
+################################################ Commands #########################################################
+-- Show data bases:
+\l
 
+-- Show Users:
+\du;
+
+-- Connect to a database:
+\connect dbname
+\c dbname
+
+-- Show relations(tables)
+\dt
+\dt+
+
+#########################################################################################################
 psql --version
 
 # Enter on postgres DB:
