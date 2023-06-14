@@ -7,9 +7,10 @@
 	$ sudo service docker stop
 
 # Building images:
-	$ docker build -t mongodb-image
-	$ docker build -t node-backend-image
-	$ docker build -t react-frontend-image
+	$ docker build -t mongodb-image .
+	$ docker build -t node-backend-image .
+	$ docker build -t react-frontend-image .
+	docker build -t react-frontend-image -f Dockerfile.prod .
 
 
 # Starting containers:
