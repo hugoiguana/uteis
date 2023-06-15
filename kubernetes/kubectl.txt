@@ -155,3 +155,8 @@ https://github.com/kvaps/kubectl-node-shell
 kubectl node-shell 172.1....
 ls /var/lib/docker/containers
 ls /var/log/pods/<namespace>_<pod_name>_<pod_id>/<container_name>/.
+
+
+# copying a secret from one namespace to another
+https://fabianlee.org/2021/04/09/kubernetes-copying-a-secret-from-one-namespace-to-another/
+kubectl get secret my-tlssecret --namespace=nginx-ns -o yaml | sed 's/namespace: .*/namespace: default/' | kubectl apply -f -
