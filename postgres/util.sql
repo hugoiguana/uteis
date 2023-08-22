@@ -1,3 +1,10 @@
+-- Extensions:
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE EXTENSION IF NOT EXISTS "btree_gist";
+
+-- Select UUID
+SELECT uuid_generate_v1();
 
 -- Number of connections opened
 SELECT count(1) FROM pg_catalog.pg_stat_activity
