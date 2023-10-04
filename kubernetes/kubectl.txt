@@ -130,7 +130,7 @@ kubectl port-forward pods/mongo-75f59d57f4-4nd6q 28015:27017
 kubectl port-forward deployment/mongo 28015:27017
 kubectl port-forward replicaset/mongo-75f59d57f4 28015:27017
 kubectl port-forward service/mongo 28015:27017
-
+---------------------------------------------------------------
 # Volumes:
 kubectl get pvc -n NAME_SPACE
 kubectl describe pvc -n NAME_SPACE PVC_NAME
@@ -140,16 +140,63 @@ kubectl describe sc STORAGE_CLASS_NAME
 kubectl get pv -n NAME_SPACE
 kubectl get pv -n NAME_SPACE
 
+---------------------------------------------------------------
+# SECRETS
 
-# Secret
 https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/
+https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-config-file/
+echo 'ektKNzU5UUMkKlMmQjMyQ0x5eXY0IU1A' | base64 --decode
+echo 'secret' | base64
 kubectl get secrets -n NAMESPACE_NAME
 kubectl get secrets -n NAMESPACE_NAME | grep rabitmq
 describe secret -n NAMESPACE_NAME rabitmq
 kubectl get secret -n NAMESPACE_NAME rabitmq -o jsonpath='{.data}'
-echo 'ektKNzU5UUMkKlMmQjMyQ0x5eXY0IU1A' | base64 --decode
+kubectl get secret -n NAMESPACE_NAME rabitmq -o jsonpath='{.data.username}' | base64 --decode
+kubectl get secret -n NAMESPACE_NAME rabitmq -o yaml
+kubectl describe secret -n NAMESPACE_NAME rabitmq
+kubectl edit secret -n NAMESPACE_NAME rabitmq
+kubectl delete secret -n NAMESPACE_NAME rabitmq
+-----
+kubectl create secret generic db-user-pass \
+    --from-literal=username=admin \
+    --from-literal=password='S!B\*d$zDsb='
+-----
+echo -n 'admin' > ./username.txt
+echo -n 'S!B\*d$zDsb=' > ./password.txt
 
+kubectl create secret generic db-user-pass \
+    --from-file=./username.txt \
+    --from-file=./password.txt
 
+kubectl create secret generic db-user-pass \
+    --from-file=username=./username.txt \
+    --from-file=password=./password.txt
+-----
+kubectl apply -f ./secret.yaml
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysecret
+type: Opaque
+data:
+  username: YWRtaW4=
+  password: MWYyZDFlMmU2N2Rm
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysecret
+type: Opaque
+stringData:
+  config.yaml: |
+    apiUrl: "https://my.api.com/api/v1"
+    username: <user>
+    password: <password> 
+
+-----
+
+---------------------------------------------------------------
 # Log files on kubernetes Nodes:
 kubectl get nodes
 https://github.com/kvaps/kubectl-node-shell
