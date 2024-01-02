@@ -1,5 +1,7 @@
 
 # Configure various context:
+https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/
+
 If you’re using kubectl, here’s the preference that takes effect while determining which kubeconfig file is used.
 1. Use --kubeconfig flag in "kubectl" commands;
 EX:
@@ -8,10 +10,14 @@ EX:
 2. Use KUBECONFIG environment variable, if specified;
 EX:
   export KUBECONFIG="~/.kube/configfile.json"
+  export KUBECONFIG=/Users/hugoiguana/.kube/config:/Users/hugoiguana/.kube/hugo-config.json
 3. Use $HOME/.kube/config file:
   Create a config file like "https://github.com/hugoiguana/uteis/blob/master/kubernetes/kube-config-clusters.json" or by the command line explain in "https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/".
   
-  
+kubectl config --help
+kubectl config get-contexts
+kubectl config use-context ${CONTEXT_NAME}
+kubectl config set-context ${CONTEXT_NAME}  
 
 ------------------------------------------------------------------------------------------
 
@@ -43,13 +49,6 @@ https://github.com/kvaps/kubectl-node-shell
 kubectl node-shell <node>
 kubectl debug node/mynode -it --image=ubuntu
 
-# Config kubectl:
-https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/
-export KUBECONFIG=/Users/hugoiguana/.kube/config:/Users/hugoiguana/.kube/hugo-config.json
-kubectl config --help
-kubectl config get-contexts
-kubectl config use-context ${CONTEXT_NAME}
-kubectl config set-context ${CONTEXT_NAME}
 
 # Commands most used
 kubectl get namespaces
