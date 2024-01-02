@@ -43,11 +43,15 @@ https://github.com/kvaps/kubectl-node-shell
 kubectl node-shell <node>
 kubectl debug node/mynode -it --image=ubuntu
 
-
-# Commands most used:
+# Config kubectl:
+https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/
+export KUBECONFIG=/Users/hugoiguana/.kube/config:/Users/hugoiguana/.kube/hugo-config.json
+kubectl config --help
 kubectl config get-contexts
 kubectl config use-context ${CONTEXT_NAME}
 kubectl config set-context ${CONTEXT_NAME}
+
+# Commands most used
 kubectl get namespaces
 kubectl get po -n ${NAMESPACE}
 kubectl logs ${POD_NAME} -n ${NAMESPACE} -c ${CONTAINER_NAME} --follow
