@@ -30,4 +30,6 @@ git revert [hash_do_commit]    (Permite desfazer qualquer número de commits, ba
                                     perdendo todas as novas funcionalidades.)
                                     
 git revert -n [hash_do_commit] (As alterações do commit são revertidas porém são adicionadas ao workind diretory antes de criar um novo commit de                                  reversão.)
+------------------------------------------------------------------------------------
 
+git restore [arquivo]
