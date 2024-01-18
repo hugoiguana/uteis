@@ -84,7 +84,7 @@ kubectl rollout history deployment/[deployment-name]
 kubectl rollout history deployment/[deployment-name] --revision=3
 
 # Adjusting Pod's replicas:	
-kubectl scale deployment/[deployment-name] --replica=3
+kubectl scale deployment/[deployment-name] --replicas=3
 
 
 # Service:
