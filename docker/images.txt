@@ -1,8 +1,12 @@
 
 
 # Show images:
-	docker images
-	docker images | grep image_name*
+docker images
+docker images | grep image_name*
+docker images -q
+docker images --filter "dangling=false" -q
+
+
 	
 	
 # Build an image based on the Dockerfile:
@@ -15,7 +19,8 @@
 	
 	
 # Removing images:
-	docker rmi [image id or name]
+docker rmi [image id or name]
+docker rmi $(docker images -f "dangling=true" -q)
 	
 	
 # Show information about the image:	
