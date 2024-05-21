@@ -17,6 +17,24 @@ services:
     networks:
       - db-network
 
+  db-mysql:
+    image: $DB_MYSQL_IMAGE
+    container_name: $DB_MYSQL_CONTAINER_NAME
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: $DB_MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: $DB_MYSQL_DATABASE_NAME
+      MYSQL_USER: $DB_MYSQL_USER
+      MYSQL_PASSWORD: $DB_MYSQL_PASSWORD
+      MYSQL_ALLOW_EMPTY_PASSWORD: $DB_MYSQL_ALLOW_EMPTY_PASSWORD
+    ports:
+      - $DB_MYSQL_EXTERNAL_PORT:$DB_MYSQL_INTERNAL_PORT
+    volumes:
+      - ./mysql/init-script:/docker-entrypoint-initdb.d/
+      - db-mysql-volume:$DB_MYSQL_DATA_VOLUME
+    networks:
+      - db-network
+
 
   db-cassandra:
     image: $DB_CASSANDRA_IMAGE
@@ -40,6 +58,7 @@ services:
 
 volumes:
   db-postgres-volume:
+  db-mysql-volume:
   db-cassandra-volume:
 
 networks:
