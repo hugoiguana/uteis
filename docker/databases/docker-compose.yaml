@@ -1,0 +1,48 @@
+version: '3.9'
+
+services:
+
+  db-postgres:
+    image: $DB_POSTGRES_IMAGE
+    container_name: $DB_POSTGRES_CONTAINER_NAME
+    environment:
+      POSTGRES_DB: $DB_POSTGRES_DATABASE_NAME
+      POSTGRES_USER: $DB_POSTGRES_USER
+      POSTGRES_PASSWORD: $DB_POSTGRES_PASSWORD
+    ports:
+      - $DB_POSTGRES_EXTERNAL_PORT:$DB_POSTGRES_INTERNAL_PORT
+    volumes:
+      - ./postgres/init-script:/docker-entrypoint-initdb.d/
+      - db-postgres-volume:$DB_POSTGRES_DATA_VOLUME
+    networks:
+      - db-network
+
+
+  db-cassandra:
+    image: $DB_CASSANDRA_IMAGE
+    container_name: $DB_CASSANDRA_CONTAINER_NAME
+    environment:
+      CASSANDRA_CLUSTER_NAME: $DB_CASSANDRA_CLUSTER_NAME
+      CASSANDRA_DATACENTER: $DB_CASSANDRA_LOCAL_DATACENTER
+      CASSANDRA_SEEDS: $DB_CASSANDRA_SEEDS
+      CASSANDRA_AUTHENTICATOR: $DB_CASSANDRA_AUTHENTICATOR
+      CASSANDRA_PASSWORD_SEEDER: $DB_CASSANDRA_PASSWORD_SEEDER
+      CASSANDRA_USER: $DB_CASSANDRA_USER
+      CASSANDRA_PASSWORD: $DB_CASSANDRA_PASSWORD
+    ports:
+      - $DB_CASSANDRA_EXTERNAL_PORT:$DB_CASSANDRA_INTERNAL_PORT
+    volumes:
+      - db-cassandra-volume:$DB_CASSANDRA_DATA_VOLUME
+      - ./cassandra/init-script:/docker-entrypoint-initdb.d
+    networks:
+      - db-network
+
+
+volumes:
+  db-postgres-volume:
+  db-cassandra-volume:
+
+networks:
+  db-network:
+    name: db-network
+    driver: bridge
