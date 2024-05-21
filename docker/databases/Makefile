@@ -3,6 +3,11 @@ install:
 	make db-mysql-install
 	make db-cassandra-install
 
+uninstall:
+	make db-postgres-uninstall
+	make db-mysql-uninstall
+	make db-cassandra-uninstall
+
 db-postgres-install:
 	docker compose up -d --build db-postgres
 db-postgres-uninstall:
