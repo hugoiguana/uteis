@@ -37,6 +37,7 @@ p              (Cola)
 --Configurando chave de acesso:
 ssh-keygen -C "hugo.iguanaa@gmail.com" -t rsa
 ssh-keygen -t rsa -b 4096 -C "hugo.iguanaa@gmail.com"
+GIT_SSH_COMMAND="ssh -i /path/to/your/private/key" git clone git@github.com:username/repo.git
 
 -- Criando projeto git e dando push pro gitHub:
 git init
