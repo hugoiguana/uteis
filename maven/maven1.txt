@@ -58,6 +58,7 @@ mvn clean install
 
 mvn clean test -Dtest="ClassTest"
 mvn clean compile -f project/pom.xml
+mvn versions:set -DnewVersion=${PROJECT_VERSION}
 
 mvn help:evaluate -Dexpression=project.name | grep "^[^\[]"
 mvn help:evaluate -Dexpression=project.version | grep "^[^\[]"
