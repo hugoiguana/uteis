@@ -56,7 +56,8 @@ mvn clean package -DskipTests=true
 mvn clean package
 mvn clean install
 
-mvn clean test -Dtest="CreateUnitAssociationUseCaseTest"
+mvn clean test -Dtest="ClassTest"
+mvn clean compile -f project/pom.xml
 
 mvn help:evaluate -Dexpression=project.name | grep "^[^\[]"
 mvn help:evaluate -Dexpression=project.version | grep "^[^\[]"
