@@ -1,0 +1,5 @@
+apps:
+  maven-project-name:
+    version:
+      develop: "1.0.0-SNAPSHOT"
+      release: "1.0.0"

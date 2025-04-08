@@ -70,4 +70,21 @@ PROJECT_GROUP_ID=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.groupId}
 PROJECT_ARTIFACT_ID=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.artifactId}' --non-recursive exec:exec)
 PROJECT_VERSION=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
 
+------------------------------------------------------------------------------------------------
+# Increment version and change it in a project:
+export TYPE_INC_VERSION="patch"
+APP_VERSION_BRANCH="develop"
+CI_PROJECT_NAME="maven-project-name"
 
+wget https://github.com/mikefarah/yq/releases/download/v4.19.1/yq_linux_amd64 -O /tmp/yq && chmod +x /tmp/yq
+APP_VERSION_LABEL=".apps.${CI_PROJECT_NAME}.version.${APP_VERSION_BRANCH}"
+
+echo "Getting versions from file versions.yaml:"
+PROJECT_VERSION=$(/tmp/yq ${APP_VERSION_LABEL} versions.yaml)
+echo "PROJECT_VERSION got from versions.yaml = ${PROJECT_VERSION}"
+
+chmod +x increment-versions-temp.sh
+PROJECT_VERSION=$(bash ./increment-versions-temp.sh "${TYPE_INC_VERSION}" "${PROJECT_VERSION}")
+echo "New version generated with ${TYPE_INC_VERSION} increment: ${PROJECT_VERSION}"
+./mvnw versions:set -DnewVersion=${PROJECT_VERSION}
+------------------------------------------------------------------------------------------------
