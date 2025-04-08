@@ -49,11 +49,14 @@ CREATING A PROJECT
 # Show de dependency tree:
 	$ mvn dependency:tree
 
+./mvnw clean
 mvn clean
 mvn clean compile
 mvn clean package -DskipTests=true
 mvn clean package
 mvn clean install
+
+mvn clean test -Dtest="CreateUnitAssociationUseCaseTest"
 
 mvn help:evaluate -Dexpression=project.name | grep "^[^\[]"
 mvn help:evaluate -Dexpression=project.version | grep "^[^\[]"
