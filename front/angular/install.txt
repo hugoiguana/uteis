@@ -3,6 +3,7 @@
   https://angular.io/guide/setup-local
 
 # Prerequisites
+  NVM;
   Nodejs;
   NPM package manager;
 
@@ -10,6 +11,9 @@
   npm install -g @angular/cli
   ng --version
   
-# Update angular:
-
-# Remove angular:
+# NVM commands:
+nvm current
+nvm list
+nvm install 18
+nvm use 18
+nvm alias default 18
