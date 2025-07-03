@@ -1,3 +1,6 @@
+
+git reset --hard origin/main -- Desfaz todas as alterações(commits) locais e aponta para o commit mais recente/atual da branch remota.
+
 # DESFAZENDO/DELETANDO ALTERAÇÕES DE ARQUIVOS E COMMITS:
 
 OBS1: O commando git reset permite desfazer qualquer número de commits, bastando utilizar o hash do commit que queremos manter como HEAD. 
